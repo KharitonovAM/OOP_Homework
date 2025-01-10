@@ -8,10 +8,11 @@ def my_phone():
 
 @pytest.fixture
 def phone_category():
-    return Category("Смартфоны",
+    phone_category_object = Category("Смартфоны",
                          "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
                          ['Iphone 15', 'Iphone 14', 'Iphone 13'],
                     )
+    return phone_category_object
 
 
 @pytest.fixture
@@ -20,3 +21,10 @@ def tv_category():
                          "Телевизор это не только передача информации, но и зомбирование населения",
                          ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55'],
                     )
+
+
+@pytest.fixture
+def clear_cash():
+    '''Фикстура обнуляет счетчики в классе Category'''
+    Category.count_category = 0
+    Category.count_names = 0
