@@ -12,3 +12,11 @@ def phone_category():
                          "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
                          ['Iphone 15', 'Iphone 14', 'Iphone 13'],
                     )
+
+
+@pytest.fixture
+def tv_category():
+    return Category("Телевизоры",
+                         "Телевизор это не только передача информации, но и зомбирование населения",
+                         ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55'],
+                    )
