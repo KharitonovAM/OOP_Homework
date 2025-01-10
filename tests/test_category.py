@@ -15,4 +15,4 @@ def test_count_number_of_categories(phone_category, tv_category):
     test_category1 = phone_category
     test_category2 = tv_category
     assert test_category1.count_names == 8
-    assert test_category2 == 8
+    assert test_category2.count_names == 8
