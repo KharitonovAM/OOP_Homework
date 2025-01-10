@@ -32,3 +32,9 @@ def test_counting_number_of_categories(clear_cash, phone_category, tv_category):
     test_category2 = tv_category
     assert test_category1.count_category == 2
     assert test_category2.count_category == 2
+
+
+def test_not_enough_variables():
+    '''Тестирование возникновения ошибки в случае передачи недостаточного количества аргументов'''
+    with pytest.raises(TypeError):
+        src.category.Category('somename', 'somedescription')
