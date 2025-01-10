@@ -17,7 +17,7 @@ class Product:
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name, description, price, quantity) -> None:
         """Инициализация объекта класса Product"""
 
         logging_product.info("Начало инициации объекта класса Category")
