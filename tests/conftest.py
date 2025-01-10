@@ -29,8 +29,8 @@ def tv_category():
 @pytest.fixture
 def clear_cash():
     '''Фикстура обнуляет счетчики в классе Category'''
-    Category.count_category = 0
-    Category.count_names = 0
+    Category.category_count = 0
+    Category.product_count = 0
 
 
 @pytest.fixture

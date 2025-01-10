@@ -4,15 +4,15 @@ class Category:
     name: str
     description: str
     products: list
-    count_names = 0
-    count_category = 0
+    product_count = 0
+    category_count = 0
 
-    def __init__(self, name, description, products):
+    def __init__(self, name, description, products) -> None:
         '''Инициализация объекта класса Category'''
 
         self.name = name
         self.description = description
         self.products = products
-        Category.count_names += len(products)
-        Category.count_category += 1
+        Category.product_count += len(products)
+        Category.category_count += 1
 

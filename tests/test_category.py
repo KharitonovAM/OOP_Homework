@@ -19,8 +19,8 @@ def test_count_number_of_categories(clear_cash, phone_category, tv_category):
     clear_cash
     test_category1 = phone_category
     test_category2 = tv_category
-    assert test_category1.count_names == 8
-    assert test_category2.count_names == 8
+    assert test_category1.product_count == 8
+    assert test_category2.product_count == 8
 
 
 def test_counting_number_of_categories(clear_cash, phone_category, tv_category):
@@ -30,8 +30,8 @@ def test_counting_number_of_categories(clear_cash, phone_category, tv_category):
     clear_cash
     test_category1 = phone_category
     test_category2 = tv_category
-    assert test_category1.count_category == 2
-    assert test_category2.count_category == 2
+    assert test_category1.category_count == 2
+    assert test_category2.category_count == 2
 
 
 def test_not_enough_variables():
