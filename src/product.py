@@ -26,5 +26,6 @@ class Product:
         self.price = price
         self.quantity = quantity
         logging_product.info(
-            f"Завершили инициацию объекта класса Category с параметрами name - {name}, description - {description}, price - {price}, quantity-{quantity}"
+            f"Завершили инициацию объекта класса Category с параметрами name - {name}, "
+            f"description - {description}, price - {price}, quantity-{quantity}"
         )
