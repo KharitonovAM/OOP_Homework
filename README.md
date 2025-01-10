@@ -27,7 +27,7 @@ python main.py
 Склонировать репозиторий:
 
 '''
-git clone https://github.com/KharitonovAM/my_kurs1
+git clone https://github.com/KharitonovAM/OOP_homework
 '''
 
 
