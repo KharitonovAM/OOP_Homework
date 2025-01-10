@@ -1,7 +1,7 @@
 import pytest
 import os
 import json
-from src.init import take_data_from_json
+from src.init import take_data_from_json, make_object_from_dict
 
 
 def test_take_data_from_json(my_dict):
@@ -16,3 +16,10 @@ def test_take_data_from_json(my_dict):
     finally:
         os.remove('temp_file.txt')
     assert data_from_file == my_data_dict
+
+
+def test_make_object_from_dict(dict_for_json):
+    test_object_list = make_object_from_dict(dict_for_json)
+    assert test_object_list[0].name == "Смартфоны"
+    assert (test_object_list[0].description ==
+            "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни")
