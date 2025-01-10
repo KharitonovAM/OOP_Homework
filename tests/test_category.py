@@ -16,3 +16,12 @@ def test_count_number_of_categories(phone_category, tv_category):
     test_category2 = tv_category
     assert test_category1.count_names == 8
     assert test_category2.count_names == 8
+
+
+def test_counting_number_of_categories(phone_category, tv_category):
+    '''Функция по тестированию функционала подсчета количеста созданных категорий, принимает на вход 2 фикстуры
+        проверяет что подсчет количества созданных категорий осуществляется верно и доступно из любой категории'''
+    test_category1 = phone_category
+    test_category2 = tv_category
+    assert test_category1.count_category == 2
+    assert test_category2.count_category == 2
