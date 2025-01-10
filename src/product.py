@@ -2,9 +2,7 @@ import logging
 
 from setting.setting import my_log_config
 
-# импортируем настройки логирования
 logging.basicConfig = my_log_config
-
 # определяем именные логеры
 logging_product = logging.getLogger("class_Product")
 
@@ -17,7 +15,7 @@ class Product:
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity) -> None:
+    def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
         """Инициализация объекта класса Product"""
 
         logging_product.info("Начало инициации объекта класса Category")

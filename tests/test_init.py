@@ -1,10 +1,11 @@
 import json
 import os
+from typing import Any
 
 from src.init import make_object_from_dict, take_data_from_json
 
 
-def test_take_data_from_json(my_dict):
+def test_take_data_from_json(my_dict: dict[Any, Any]) -> None:
     """Создаем файл, записывем в него данные из словаря (фикстуры),
     получаем из него данные при помощи функции take_data_from_json.
      временный файл удалем и проверем корректность полученной информации"""
@@ -18,7 +19,7 @@ def test_take_data_from_json(my_dict):
     assert data_from_file == my_data_dict
 
 
-def test_make_object_from_dict(dict_for_json):
+def test_make_object_from_dict(dict_for_json: dict[Any, Any]) -> None:
     test_object_list = make_object_from_dict(dict_for_json)
     print(test_object_list)
     assert test_object_list[0].name == "Смартфоны"

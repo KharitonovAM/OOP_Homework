@@ -1,16 +1,17 @@
 import pytest
+from typing import Any
 
 from src.category import Category
 from src.product import Product
 
 
 @pytest.fixture
-def my_phone():
+def my_phone() -> Product:
     return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
 
 
 @pytest.fixture
-def phone_category():
+def phone_category() -> Category:
     phone_category_object = Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
@@ -20,7 +21,7 @@ def phone_category():
 
 
 @pytest.fixture
-def tv_category():
+def tv_category() -> Category :
     return Category(
         "Телевизоры",
         "Телевизор это не только передача информации, но и зомбирование населения",
@@ -35,14 +36,14 @@ def tv_category():
 
 
 @pytest.fixture
-def clear_cash():
+def clear_cash() -> None:
     """Фикстура обнуляет счетчики в классе Category"""
     Category.category_count = 0
     Category.product_count = 0
 
 
 @pytest.fixture
-def my_dict():
+def my_dict() -> dict[Any, Any]:
     return {
         "name":
             "Телевизоры",
@@ -54,13 +55,12 @@ def my_dict():
 
 
 @pytest.fixture
-def dict_for_json():
+def dict_for_json() -> list[dict[Any, Any]]:
     return [
         {
             "name": "Смартфоны",
             "description":
-                "Смартфоны, как средство не только коммуникации, но и получение дополнительных"\
-            "функций для удобства жизни",
+                "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
             "products": [
                 {
                     "name": "Samsung Galaxy C23 Ultra",

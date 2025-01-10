@@ -1,12 +1,11 @@
 import json
 import logging
-from typing import Any, ClassVar
+from typing import Any
 
-from setting.setting import my_log_config
 from src.category import Category
 from src.product import Product
+from setting.setting import my_log_config
 
-# импортируем настройки логирования
 logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_init = logging.getLogger("modul init")
@@ -22,7 +21,7 @@ def take_data_from_json(filename: str) -> dict[Any, Any]:
     return data_from_file
 
 
-def make_object_from_dict(inncomming_data: dict[Any, Any]) -> list[ClassVar]:
+def make_object_from_dict(inncomming_data: dict[Any, Any]) -> list[Any]:
     """Принимает словарь и возвращает список объектов классов"""
 
     logging_init.info(f"Для формирования объектов получили словарь {inncomming_data}")
