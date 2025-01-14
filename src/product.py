@@ -22,7 +22,7 @@ class Product:
         logging_product.info("Начало инициации объекта класса Category")
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
         logging_product.info(
             f"Завершили инициацию объекта класса Category с параметрами name - {name}, "
@@ -41,8 +41,8 @@ class Product:
         for item in insert_list:
             if item.name == creating_product.name:
                 logging_product.info(f"Нашли совпедение с объектом из словаря у которого наименвоание {item.name}")
-                creating_product.price = max(creating_product.price, item.price)
+                creating_product.__price = max(creating_product.__price, item.__price)
                 creating_product.quantity += item.quantity
                 logging_product.info(
-                    f"Видоизменили объект и теперь цена {creating_product.price} и количество {creating_product.quantity}")
+                    f"Видоизменили объект и теперь цена {creating_product.__price} и количество {creating_product.quantity}")
         return creating_product
