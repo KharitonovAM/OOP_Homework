@@ -29,12 +29,20 @@ class Product:
             f"description - {description}, price - {price}, quantity-{quantity}"
         )
 
-
-
-
     @classmethod
-    def new_product(cls, insert_dict: dict[Any, Any]):
-        '''принимает на вход параметры товара в словаре и возвращать созданный объект класса Product'''
-        logging_product.info(f"Создан новый объект на базе словаря {insert_dict}")
+    def new_product(cls, insert_dict: dict[Any, Any], insert_list=[]) -> None:
+        '''принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
+        так же может принимать на вход список объектов Продукт и если находит совпадение, то
+        возвращает максимальную цену и сумму количества объектов в образованном объекте'''
 
-        return cls(**insert_dict)
+        logging_product.info("Начало инициации объекта класса Category c classmetod new_product")
+        creating_product = cls(**insert_dict)
+        logging_product.info(f"Создали новый объект на основе {insert_dict}")
+        for item in insert_list:
+            if item.name == creating_product.name:
+                logging_product.info(f"Нашли совпедение с объектом из словаря у которого наименвоание {item.name}")
+                creating_product.price = max(creating_product.price, item.price)
+                creating_product.quantity += item.quantity
+                logging_product.info(
+                    f"Видоизменили объект и теперь цена {creating_product.price} и количество {creating_product.quantity}")
+        return creating_product
