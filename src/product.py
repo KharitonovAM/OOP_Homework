@@ -58,6 +58,11 @@ class Product:
     def price(self, new_price):
         '''Устанавливает новое значение цены'''
 
-        self.__price = new_price
+        if self.__price > new_price:
+            user_choise = ''
+            while user_choise.lower() not in ('y', 'n'):
+                user_choise = input('Новая цена ниже чем предыдущая. Для подтверждение ввода сделайте выбор: y - устанавливаем более нихку цену, n - сохранем предыдущую.\n')
+            if user_choise.lower() == 'y':
+                self.__price = new_price
         if self.__price <= 0:
             print('Цена не должна быть нулевая или отрицательная')
