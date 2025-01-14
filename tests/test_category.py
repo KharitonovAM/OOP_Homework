@@ -1,5 +1,6 @@
 import pytest
 from typing import Any
+from _pytest.capture import CaptureFixture
 
 from src.category import Category
 
@@ -56,8 +57,16 @@ def test_add_product(tv_category, my_phone) -> None:
 
 
 @pytest.mark.parametrize('wrong_data',[(123),('sfsdf'),(['sdf',133]),(151.131),(('dfsf',133,132,1,2,'sdf')),({'sdfsf':151, 1:'wer'})])
-def test_wrong_type_of_adding(tv_category, wrong_data):
+def test_wrong_type_of_adding(tv_category, wrong_data) -> None:
     '''Проверяем. что в случае если в функцию add_product передан аргумент
     который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование'''
     with pytest.raises(AttributeError):
         tv_category.add_product(wrong_data)
+
+
+def test_products(category_with_products: Category, capsys) -> None:
+    ''' Тестируем, что функция выводит данные по продуктам согласно ТЗ'''
+    tv_category.products
+    captured = capsys.readouterr()
+    assert (captured.out == '''Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
+    айфон 14, 70000.0 руб. Остаток: 14 шт.\n''')
