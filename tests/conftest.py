@@ -1,5 +1,6 @@
-import pytest
 from typing import Any
+
+import pytest
 
 from src.category import Category
 from src.product import Product
