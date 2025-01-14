@@ -82,7 +82,7 @@ def dict_for_json() -> list[dict[Any, Any]]:
 
 
 @pytest.fixture
-def category_with_products():
+def category_with_products() -> Category:
     return Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
@@ -94,10 +94,10 @@ def category_with_products():
 
 
 @pytest.fixture
-def product_dict1():
+def product_dict1() -> dict[str,Any]:
     return {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 31000.0, "quantity": 14}
 
 
 @pytest.fixture
-def product_dict2():
+def product_dict2() -> dict[str,Any]:
     return {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}

@@ -56,7 +56,7 @@ def test_new_product2(product_dict2: dict[str, Any]) -> None:
     )
 
 
-def test_new_product_upgrade(my_phone: Product):
+def test_new_product_upgrade(my_phone: Product) -> None:
     """Тестирует расширенный функционал new_product с проверкой наличия добавляемого продукта уже в списке продуктов"""
 
     my_list = [my_phone]
@@ -75,7 +75,7 @@ def test_new_product_upgrade(my_phone: Product):
     )
 
 
-def test_new_price():
+def test_new_price() -> None:
     """Тестируем функцию установление новой стоимости"""
     my_product = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     my_product.price = 15000000
@@ -83,7 +83,7 @@ def test_new_price():
 
 
 @patch("src.product.input", side_effect=["y"])
-def test_new_price_low_0(capsys):
+def test_new_price_low_0(capsys) -> None:
     """Проверяем корректность поведения при попытке установить стоимость ниже 0"""
     my_phone = Product("product_name", "product_decription", 200000, 5)
     my_phone.price = -1500000
@@ -103,7 +103,7 @@ def test_new_price_low_0(capsys):
 
 
 @patch("src.product.input", side_effect=["k", "y"])
-def test_new_price_chang_low2(my_phone):
+def test_new_price_chang_low2(my_phone: Product) -> None:
     """Тест проверяет случай когда пользователь согласен изменять стоимость на болюю низкую"""
 
     z = my_phone

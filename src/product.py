@@ -11,10 +11,6 @@ logging_product = logging.getLogger("class_Product")
 class Product:
     """Класс по созданию объектов Продукт"""
 
-    name: str
-    description: str
-    price: float
-    quantity: int
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
         """Инициализация объекта класса Product"""
@@ -29,8 +25,9 @@ class Product:
             f"description - {description}, price - {price}, quantity-{quantity}"
         )
 
+
     @classmethod
-    def new_product(cls, insert_dict: dict[Any, Any], insert_list=[]) -> None:
+    def new_product(cls, insert_dict: dict[Any, Any], insert_list:list = []) -> Product:
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
         так же может принимать на вход список объектов Продукт и если находит совпадение, то
         возвращает максимальную цену и сумму количества объектов в образованном объекте"""
@@ -49,14 +46,16 @@ class Product:
                 )
         return creating_product
 
+
     @property
-    def price(self):
+    def price(self) -> float:
         """Геттер для получения данных о значении параметра цена"""
 
         return self.__price
 
+
     @price.setter
-    def price(self, new_price):
+    def price(self, new_price: float) -> None:
         """Устанавливает новое значение цены"""
 
         if self.__price > new_price:
