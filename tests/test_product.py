@@ -1,10 +1,8 @@
 from typing import Any
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 import pytest
-from _pytest.capture import CaptureFixture
 
-import src.product
 from src.product import Product
 
 

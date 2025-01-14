@@ -1,25 +1,134 @@
-2025-01-14 22:18:16,408 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-14 22:18:16,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy S23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-14 22:18:16,408 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-14 22:18:16,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
-2025-01-14 22:18:16,408 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-14 22:18:16,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
-2025-01-14 22:18:16,408 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-14 22:18:16,408 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x000002C8A6F48200>, <src.product.Product object at 0x000002C8A707CEC0>, <src.product.Product object at 0x000002C8A6F48230>]
-2025-01-14 22:18:16,409 - INFO- class_Category - Выводим на экран информацию о продуктах
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Iphone 15, 210000.0 руб. Остаток: 8 шт.
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.
-2025-01-14 22:18:16,409 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-14 22:18:16,409 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
-2025-01-14 22:18:16,409 - INFO- class_Category - Начиинаем добавлять в список продуктов 55" QLED 4K
-2025-01-14 22:18:16,409 - INFO- class_Category - Продукт с наименованием 55" QLED 4K успешно обавлен в список к Смартфоны
-2025-01-14 22:18:16,409 - INFO- class_Category - Выводим на экран информацию о продуктах
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Iphone 15, 210000.0 руб. Остаток: 8 шт.
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.
-2025-01-14 22:18:16,409 - INFO- class_Category - Вывели на экран: 55" QLED 4K, 123000.0 руб. Остаток: 7 шт.
-2025-01-14 22:18:16,409 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
-2025-01-14 22:18:16,409 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-14 22:18:16,409 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy S23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-14 22:18:16,409 - INFO- class_Product - Создали новый объект на основе {'name': 'Samsung Galaxy S23 Ultra', 'description': '256GB, Серый цвет, 200MP камера', 'price': 180000.0, 'quantity': 5}
+2025-01-14 22:29:49,824 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,824 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
+2025-01-14 22:29:49,828 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,828 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
+2025-01-14 22:29:49,828 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,828 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,830 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,830 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
+2025-01-14 22:29:49,831 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,831 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,835 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,836 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,836 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,836 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,837 - INFO- class_Category - Начиинаем добавлять в список продуктов Iphone 15
+2025-01-14 22:29:49,837 - INFO- class_Category - Продукт с наименованием Iphone 15 успешно обавлен в список к Телевизоры
+2025-01-14 22:29:49,838 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,839 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,840 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,840 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,842 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,842 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,844 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,845 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,848 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,848 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,851 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,851 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Телевизор это не только передача информации, но и зомбирование населения, products - ['Wollmer QLED HL55 Onyx', 'Яндекс ТВ Станция Pro YaGPT 55', 'TCL 55C655 Pro', 'Hisense 55U6KQ', 'Xiaomi TV A Pro 55']
+2025-01-14 22:29:49,852 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,853 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-14 22:29:49,853 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,853 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
+2025-01-14 22:29:49,853 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,853 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x0000020B81463890>, <src.product.Product object at 0x0000020B81463920>]
+2025-01-14 22:29:49,854 - INFO- class_Category - Выводим на экран информацию о продуктах
+2025-01-14 22:29:49,854 - INFO- class_Category - Вывели на экран: Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
+2025-01-14 22:29:49,854 - INFO- class_Category - Вывели на экран: айфон 14, 70000.0 руб. Остаток: 14 шт.
+2025-01-14 22:29:49,858 - INFO- modul init - Старт извлечения данных из json файла temp_file.txt
+2025-01-14 22:29:49,859 - INFO- modul init - Данные из temp_file.txt успешно получены
+2025-01-14 22:29:49,861 - INFO- modul init - Для формирования объектов получили словарь [{'name': 'Смартфоны', 'description': 'Смартфоны, как средство не только коммуникации', 'products': [{'name': 'Samsung Galaxy C23 Ultra', 'description': '256GB, Серый цвет, 200MP камера', 'price': 180000.0, 'quantity': 5}, {'name': 'Iphone 15', 'description': '512GB, Gray space', 'price': 210000.0, 'quantity': 8}, {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14}]}, {'name': 'Телевизоры', 'description': 'Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником', 'products': [{'name': '55" QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}]}]
+2025-01-14 22:29:49,861 - INFO- modul init - Старт формирования объекта Категория
+2025-01-14 22:29:49,861 - INFO- modul init - Старт формирования объекта Продукт
+2025-01-14 22:29:49,861 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,861 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-14 22:29:49,861 - INFO- modul init - Объект класса Продукт сформирован
+2025-01-14 22:29:49,861 - INFO- modul init - Старт формирования объекта Продукт
+2025-01-14 22:29:49,862 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,862 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,862 - INFO- modul init - Объект класса Продукт сформирован
+2025-01-14 22:29:49,862 - INFO- modul init - Старт формирования объекта Продукт
+2025-01-14 22:29:49,862 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,862 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,862 - INFO- modul init - Объект класса Продукт сформирован
+2025-01-14 22:29:49,862 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,862 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, products - [<src.product.Product object at 0x0000020B81463E60>, <src.product.Product object at 0x0000020B814A8170>, <src.product.Product object at 0x0000020B814A8380>]
+2025-01-14 22:29:49,862 - INFO- modul init - объект класса Категория сформирован
+2025-01-14 22:29:49,863 - INFO- modul init - Старт формирования объекта Категория
+2025-01-14 22:29:49,863 - INFO- modul init - Старт формирования объекта Продукт
+2025-01-14 22:29:49,863 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,863 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,863 - INFO- modul init - Объект класса Продукт сформирован
+2025-01-14 22:29:49,863 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-14 22:29:49,864 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Телевизоры, description - Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником, products - [<src.product.Product object at 0x0000020B814A8740>]
+2025-01-14 22:29:49,864 - INFO- modul init - объект класса Категория сформирован
+2025-01-14 22:29:49,868 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,868 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,873 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,873 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,873 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,873 - INFO- class_Product - Создали новый объект на основе {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14}
+2025-01-14 22:29:49,873 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,873 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,873 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,873 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,874 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,874 - INFO- class_Product - Создали новый объект на основе {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14}
+2025-01-14 22:29:49,874 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,874 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,874 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,874 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,874 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,874 - INFO- class_Product - Создали новый объект на основе {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14}
+2025-01-14 22:29:49,874 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,874 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,875 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,875 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,875 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,875 - INFO- class_Product - Создали новый объект на основе {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14}
+2025-01-14 22:29:49,875 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,875 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-14 22:29:49,877 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,877 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,877 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,877 - INFO- class_Product - Создали новый объект на основе {'name': '55" QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}
+2025-01-14 22:29:49,877 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,877 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,877 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,878 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,878 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,878 - INFO- class_Product - Создали новый объект на основе {'name': '55" QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}
+2025-01-14 22:29:49,878 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,878 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,878 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,878 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,879 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,879 - INFO- class_Product - Создали новый объект на основе {'name': '55" QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}
+2025-01-14 22:29:49,879 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,879 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,879 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,879 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,879 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,879 - INFO- class_Product - Создали новый объект на основе {'name': '55" QLED 4K', 'description': 'Фоновая подсветка', 'price': 123000.0, 'quantity': 7}
+2025-01-14 22:29:49,879 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,879 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - 55" QLED 4K, description - Фоновая подсветка, price - 123000.0, quantity-7
+2025-01-14 22:29:49,881 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,881 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,882 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,882 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,882 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,882 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,882 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 15000, quantity-12
+2025-01-14 22:29:49,882 - INFO- class_Product - Создали новый объект на основе {'name': 'Iphone 15', 'description': '512GB, Gray space', 'price': 15000, 'quantity': 12}
+2025-01-14 22:29:49,882 - INFO- class_Product - Нашли совпедение с объектом из словаря у которого наименвоание Iphone 15
+2025-01-14 22:29:49,883 - INFO- class_Product - Видоизменили объект и теперь цена 210000.0 и количество 20
+2025-01-14 22:29:49,883 - INFO- class_Product - Начало инициации объекта класса Category c classmetod new_product
+2025-01-14 22:29:49,883 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,883 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 15000, quantity-12
+2025-01-14 22:29:49,883 - INFO- class_Product - Создали новый объект на основе {'name': 'Iphone 15', 'description': '512GB, Gray space', 'price': 15000, 'quantity': 12}
+2025-01-14 22:29:49,883 - INFO- class_Product - Нашли совпедение с объектом из словаря у которого наименвоание Iphone 15
+2025-01-14 22:29:49,883 - INFO- class_Product - Видоизменили объект и теперь цена 210000.0 и количество 20
+2025-01-14 22:29:49,885 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,885 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-14 22:29:49,890 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-14 22:29:49,890 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - product_name, description - product_decription, price - 200000, quantity-5

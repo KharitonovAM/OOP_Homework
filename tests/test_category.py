@@ -1,9 +1,9 @@
 from typing import Any
 
 import pytest
-from _pytest.capture import CaptureFixture
 
 from src.category import Category
+from src.product import Product
 
 
 def test_make_object_category(phone_category: Category) -> None:
@@ -47,7 +47,7 @@ def test_not_enough_variables() -> None:
         Category("somename", "somedescription")
 
 
-def test_add_product(tv_category, my_phone) -> None:
+def test_add_product(tv_category: Category, my_phone: Product) -> None:
     """Тестируем функционал добавления в список продуктов объекта категории продукт
     В фикстуру tv_category добавим объект из фикстуры my_phone, так как список продуктов - приватный
     проверяем что количество увеличелось продуктов в списке на 1"""
@@ -61,7 +61,7 @@ def test_add_product(tv_category, my_phone) -> None:
     "wrong_data",
     [(123), ("sfsdf"), (["sdf", 133]), (151.131), (("dfsf", 133, 132, 1, 2, "sdf")), ({"sdfsf": 151, 1: "wer"})],
 )
-def test_wrong_type_of_adding(tv_category, wrong_data) -> None:
+def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
     """Проверяем. что в случае если в функцию add_product передан аргумент
     который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование"""
 
