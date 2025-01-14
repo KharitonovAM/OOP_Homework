@@ -54,3 +54,9 @@ def test_new_product_upgrade(my_phone: Product):
     assert Product.new_product(
         {'name': 'Iphone 15', 'description': "512GB, Gray space", 'price': 15000, 'quantity': 12},
         my_list).quantity == 20
+
+
+def test_new_price():
+    my_product = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+    my_product.price = 1500000
+    assert my_product.price == 1500000
