@@ -59,5 +59,5 @@ class Product:
         '''Устанавливает новое значение цены'''
 
         self.__price = new_price
-        if self.__price < 0:
+        if self.__price <= 0:
             print('Цена не должна быть нулевая или отрицательная')
