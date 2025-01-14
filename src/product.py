@@ -28,3 +28,12 @@ class Product:
             f"Завершили инициацию объекта класса Category с параметрами name - {name}, "
             f"description - {description}, price - {price}, quantity-{quantity}"
         )
+
+
+
+
+    @classmethod
+    def new_product(cls, insert_dict: dict[Any, Any]):
+        '''принимает на вход параметры товара в словаре и возвращать созданный объект класса Product'''
+
+        return cls(**insert_dict)
