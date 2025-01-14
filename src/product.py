@@ -52,3 +52,9 @@ class Product:
     def price(self):
         '''Геттер для получения данных о значении параметра цена'''
         return self.__price
+
+    @price.setter
+    def price(self, new_price):
+        '''Устанавливает новое значение цены'''
+        self.__price = new_price
+
