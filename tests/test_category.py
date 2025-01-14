@@ -14,7 +14,7 @@ def test_make_object_category(phone_category: Category) -> None:
         test_category.description
         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
     )
-    #assert test_category.products == ["Iphone 15", "Iphone 14", "Iphone 13"]
+    # assert test_category.products == ["Iphone 15", "Iphone 14", "Iphone 13"]
 
 
 def test_count_number_of_categories(clear_cash: None, phone_category: Category, tv_category: Category) -> None:
@@ -47,28 +47,34 @@ def test_not_enough_variables() -> None:
 
 
 def test_add_product(tv_category, my_phone) -> None:
-    '''Тестируем функционал добавления в список продуктов объекта категории продукт
+    """Тестируем функционал добавления в список продуктов объекта категории продукт
     В фикстуру tv_category добавим объект из фикстуры my_phone, так как список продуктов - приватный
-    проверяем что количество увеличелось продуктов в списке на 1'''
+    проверяем что количество увеличелось продуктов в списке на 1"""
 
     start_count = tv_category.product_count
     tv_category.add_product(my_phone)
     assert tv_category.product_count - start_count == 1
 
 
-@pytest.mark.parametrize('wrong_data',[(123),('sfsdf'),(['sdf',133]),(151.131),(('dfsf',133,132,1,2,'sdf')),({'sdfsf':151, 1:'wer'})])
+@pytest.mark.parametrize(
+    "wrong_data",
+    [(123), ("sfsdf"), (["sdf", 133]), (151.131), (("dfsf", 133, 132, 1, 2, "sdf")), ({"sdfsf": 151, 1: "wer"})],
+)
 def test_wrong_type_of_adding(tv_category, wrong_data) -> None:
-    '''Проверяем. что в случае если в функцию add_product передан аргумент
-    который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование'''
+    """Проверяем. что в случае если в функцию add_product передан аргумент
+    который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование"""
 
     with pytest.raises(AttributeError):
         tv_category.add_product(wrong_data)
 
 
 def test_products(category_with_products: Category, capsys) -> None:
-    ''' Тестируем, что функция выводит данные по продуктам согласно ТЗ'''
+    """Тестируем, что функция выводит данные по продуктам согласно ТЗ"""
 
     category_with_products.products
     captured = capsys.readouterr()
-    assert (captured.out == '''Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
-айфон 14, 70000.0 руб. Остаток: 14 шт.\n''')
+    assert (
+        captured.out
+        == """Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
+айфон 14, 70000.0 руб. Остаток: 14 шт.\n"""
+    )

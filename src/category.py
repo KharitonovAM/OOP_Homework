@@ -33,24 +33,21 @@ class Category:
             f"{name}, description - {description}, products - {products}"
         )
 
-
     def add_product(self, new_product: Product):
-        '''Добавляет новый объект класса Product в список продуктов'''
+        """Добавляет новый объект класса Product в список продуктов"""
 
-        logging_category.info(
-            f'Начиинаем добавлять в список продуктов {new_product.name}'
-        )
+        logging_category.info(f"Начиинаем добавлять в список продуктов {new_product.name}")
         Category.product_count += 1
-        logging_category.info(
-            f'Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}'
-        )
+        logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
         return self.__products.append(new_product)
 
     @property
     def products(self):
-        '''Геттер, выводящий информацию о продуктах, находящихся в категории'''
+        """Геттер, выводящий информацию о продуктах, находящихся в категории"""
 
-        logging_category.info('Выводим на экран информацию о продуктах')
+        logging_category.info("Выводим на экран информацию о продуктах")
         for product in self.__products:
-            print(f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
-            logging_category.info(f'Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт.')
+            print(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
+            logging_category.info(
+                f"Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
+            )

@@ -31,9 +31,9 @@ class Product:
 
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list=[]) -> None:
-        '''принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
+        """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
         так же может принимать на вход список объектов Продукт и если находит совпадение, то
-        возвращает максимальную цену и сумму количества объектов в образованном объекте'''
+        возвращает максимальную цену и сумму количества объектов в образованном объекте"""
 
         logging_product.info("Начало инициации объекта класса Category c classmetod new_product")
         creating_product = cls(**insert_dict)
@@ -44,33 +44,36 @@ class Product:
                 creating_product.__price = max(creating_product.__price, item.__price)
                 creating_product.quantity += item.quantity
                 logging_product.info(
-                    f"Видоизменили объект и теперь цена {creating_product.__price} и количество {creating_product.quantity}")
+                    f"Видоизменили объект и теперь цена {creating_product.__price} и количество {creating_product.quantity}"
+                )
         return creating_product
-
 
     @property
     def price(self):
-        '''Геттер для получения данных о значении параметра цена'''
+        """Геттер для получения данных о значении параметра цена"""
 
         return self.__price
 
     @price.setter
     def price(self, new_price):
-        '''Устанавливает новое значение цены'''
+        """Устанавливает новое значение цены"""
 
         if self.__price > new_price:
-            user_choise = ''
-            while user_choise.lower() not in ('y', 'n'):
-                user_choise = input('\nНовая цена ниже чем предыдущая. Для подтверждение ввода сделайте выбор: y - устанавливаем более нихку цену, n - сохранем предыдущую.\n')
-                if user_choise.lower() == 'y':
+            user_choise = ""
+            while user_choise.lower() not in ("y", "n"):
+                user_choise = input(
+                    "\nНовая цена ниже чем предыдущая. Для подтверждение ввода сделайте выбор: y - устанавливаем более нихку цену, n - сохранем предыдущую.\n"
+                )
+                if user_choise.lower() == "y":
                     self.__price = new_price
                     if new_price <= 0:
-                        print('Цена не должна быть нулевая или отрицательная')
+                        print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = new_price
 
-if __name__ == '__main__':
-    l = Product('qqq','sdfsdf',15000, 5)
+
+if __name__ == "__main__":
+    l = Product("qqq", "sdfsdf", 15000, 5)
     print(l.price)
     l.price = -10000
     print(l.price)
