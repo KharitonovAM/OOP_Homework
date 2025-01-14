@@ -24,7 +24,7 @@ class Category:
         logging_category.info("Начало инициации объекта класса Category")
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
         Category.product_count += len(products)
         Category.category_count += 1
         logging_category.info(
