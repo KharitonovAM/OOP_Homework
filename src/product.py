@@ -27,7 +27,7 @@ class Product:
 
 
     @classmethod
-    def new_product(cls, insert_dict: dict[Any, Any], insert_list:list = []) -> Product:
+    def new_product(cls, insert_dict: dict[Any, Any], insert_list:list = []):
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
         так же может принимать на вход список объектов Продукт и если находит совпадение, то
         возвращает максимальную цену и сумму количества объектов в образованном объекте"""
