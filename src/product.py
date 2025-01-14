@@ -47,6 +47,7 @@ class Product:
     @property
     def price(self) -> float:
         """Геттер для получения данных о значении параметра цена"""
+        logging_product.info(f'Поступил запрос по получению данных цены у {self.name}')
 
         return self.__price
 
@@ -54,16 +55,22 @@ class Product:
     def price(self, new_price: float) -> None:
         """Устанавливает новое значение цены"""
 
+        logging_product.info(f'Начинаем устанавливать новую цену {new_price} для {self.name}, предыдущая цена {self.__price}')
         if self.__price > new_price:
             user_choise = ""
             while user_choise.lower() not in ("y", "n"):
+                logging_product.info('Выполняем запрос пользователю на снижение цены')
                 user_choise = input(
                     "\nНовая цена ниже чем предыдущая. Для подтверждение ввода сделайте выбор: "
                     "y - устанавливаем более нихку цену, n - сохранем предыдущую.\n"
                 )
+                logging_product.info(f'Получен ответ пользователя {user_choise}')
                 if user_choise.lower() == "y":
+                    logging_product.info('Пользователь утвердил снижение цены')
                     self.__price = new_price
                     if new_price <= 0:
+                        logging_product.info("Уведомили пользователя об отрицательной цене")
                         print("Цена не должна быть нулевая или отрицательная")
         else:
+            logging_product.info('Изменили на новую стоимость (как увеличение)')
             self.__price = new_price
