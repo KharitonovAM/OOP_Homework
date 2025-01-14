@@ -1,5 +1,6 @@
 import pytest
 from typing import Any
+from unittest.mock import patch
 from _pytest.capture import CaptureFixture
 
 from src.product import Product
@@ -58,14 +59,31 @@ def test_new_product_upgrade(my_phone: Product):
 
 
 def test_new_price():
+    '''Тестируем функцию установление новой стоимости'''
     my_product = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
-    my_product.price = 1500000
-    assert my_product.price == 1500000
+    my_product.price = 15000000
+    assert my_product.price == 15000000
 
 
 def test_new_price_low_0(my_phone, capsys):
     '''Проверяем корректность поведения при попытке установить стоимость ниже 0'''
+
     my_phone.price = -1500000
     my_priner = capsys.readouterr()
     assert my_priner.out == 'Цена не должна быть нулевая или отрицательная\n'
 
+
+@patch(input, side_effect = ['n'])
+def test_new_price_chang_low(my_phone):
+    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+
+    my_phone.price = 150000
+    assert my_phone.price == 210000
+
+
+@patch(input, side_effect = ['y'])
+def test_new_price_chang_low(my_phone):
+    '''Тест проверяет случай когда пользователь согласен изменять стоимость на болюю низкую'''
+
+    my_phone.price = 1500
+    assert my_phone.price == 1500
