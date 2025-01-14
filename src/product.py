@@ -35,5 +35,6 @@ class Product:
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any]):
         '''принимает на вход параметры товара в словаре и возвращать созданный объект класса Product'''
+        logging_product.info(f"Создан новый объект на базе словаря {insert_dict}")
 
         return cls(**insert_dict)
