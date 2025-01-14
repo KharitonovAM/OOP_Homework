@@ -1,6 +1,6 @@
 import logging
 
-from setting.setting import my_log_config
+from setting.log_setting import my_log_config
 
 logging.basicConfig = my_log_config
 # определяем именные логеры

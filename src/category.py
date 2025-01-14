@@ -1,7 +1,7 @@
 import logging
 from typing import Any
 
-from setting.setting import my_log_config
+from setting.log_setting import my_log_config
 
 
 logging.basicConfig = my_log_config
