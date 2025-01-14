@@ -2,6 +2,7 @@ import logging
 from typing import Any
 
 from setting.log_setting import my_log_config
+from src.product import Product
 
 
 logging.basicConfig = my_log_config

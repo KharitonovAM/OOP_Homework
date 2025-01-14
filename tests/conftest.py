@@ -21,7 +21,7 @@ def phone_category() -> Category:
 
 
 @pytest.fixture
-def tv_category() -> Category :
+def tv_category() -> Category:
     return Category(
         "Телевизоры",
         "Телевизор это не только передача информации, но и зомбирование населения",

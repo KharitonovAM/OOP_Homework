@@ -39,5 +39,16 @@ def test_counting_number_of_categories(clear_cash: None, phone_category: Categor
 
 def test_not_enough_variables() -> None:
     """Тестирование возникновения ошибки в случае передачи недостаточного количества аргументов"""
+
     with pytest.raises(TypeError):
         Category("somename", "somedescription")
+
+
+def test_add_product(tv_category, my_phone) -> None:
+    '''Тестируем функционал добавления в список продуктов объекта категории продукт
+    В фикстуру tv_category добавим объект из фикстуры my_phone, так как список продуктов - приватный
+    проверяем что количество увеличелось продуктов в списке на 1'''
+
+    start_count = tv_category.product_count
+    tv_category.add_product(my_phone)
+    assert tv_category.product_count - start_count == 1
