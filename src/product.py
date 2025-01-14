@@ -51,10 +51,13 @@ class Product:
     @property
     def price(self):
         '''Геттер для получения данных о значении параметра цена'''
+
         return self.__price
 
     @price.setter
     def price(self, new_price):
         '''Устанавливает новое значение цены'''
-        self.__price = new_price
 
+        self.__price = new_price
+        if self.__price < 0:
+            print('Цена не должна быть нулевая или отрицательная')
