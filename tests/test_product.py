@@ -1,5 +1,6 @@
 import pytest
 from typing import Any
+from _pytest.capture import CaptureFixture
 
 from src.product import Product
 
@@ -60,3 +61,11 @@ def test_new_price():
     my_product = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     my_product.price = 1500000
     assert my_product.price == 1500000
+
+
+def test_new_price_low_0(my_phone, capsys):
+    '''Проверяем корректность поведения при попытке установить стоимость ниже 0'''
+    my_phone.price = -1500000
+    my_priner = capsys.readouterr()
+    assert my_priner.out == 'Цена не должна быть нулевая или отрицательная\n'
+
