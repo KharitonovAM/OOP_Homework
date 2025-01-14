@@ -46,3 +46,9 @@ class Product:
                 logging_product.info(
                     f"Видоизменили объект и теперь цена {creating_product.__price} и количество {creating_product.quantity}")
         return creating_product
+
+
+    @property
+    def price(self):
+        '''Геттер для получения данных о значении параметра цена'''
+        return self.__price
