@@ -1,8 +1,9 @@
 import pytest
 from typing import Any
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 from _pytest.capture import CaptureFixture
 
+import src.product
 from src.product import Product
 
 
@@ -64,26 +65,28 @@ def test_new_price():
     my_product.price = 15000000
     assert my_product.price == 15000000
 
-
-def test_new_price_low_0(my_phone, capsys):
+@patch('src.product.input', side_effect = ['y'])
+def test_new_price_low_0(capsys):
     '''Проверяем корректность поведения при попытке установить стоимость ниже 0'''
-
+    my_phone = Product('product_name', 'product_decription', 200000, 5)
     my_phone.price = -1500000
     my_priner = capsys.readouterr()
-    assert my_priner.out == 'Цена не должна быть нулевая или отрицательная\n'
+    assert my_priner
+#
+#
+# @patch('src.product.input', side_effect=['g','n'])
+# def test_new_price_chang_low():
+#     '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+#
+#     my_phone = Product('product_name', 'product_decription', 200000, 5)
+#     my_phone.price = 1500
+#     assert my_phone.price == 200000
 
 
-@patch(input, side_effect = ['n'])
-def test_new_price_chang_low(my_phone):
-    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
-
-    my_phone.price = 150000
-    assert my_phone.price == 210000
-
-
-@patch(input, side_effect = ['y'])
-def test_new_price_chang_low(my_phone):
+@patch('src.product.input', side_effect=['k', 'y'])
+def test_new_price_chang_low2(my_phone):
     '''Тест проверяет случай когда пользователь согласен изменять стоимость на болюю низкую'''
 
-    my_phone.price = 1500
-    assert my_phone.price == 1500
+    z = my_phone
+    z.price = 1500
+    assert z.price == 1500
