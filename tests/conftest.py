@@ -1,5 +1,6 @@
-import pytest
 from typing import Any
+
+import pytest
 
 from src.category import Category
 from src.product import Product
@@ -21,7 +22,7 @@ def phone_category() -> Category:
 
 
 @pytest.fixture
-def tv_category() -> Category :
+def tv_category() -> Category:
     return Category(
         "Телевизоры",
         "Телевизор это не только передача информации, но и зомбирование населения",
@@ -45,12 +46,10 @@ def clear_cash() -> None:
 @pytest.fixture
 def my_dict() -> dict[Any, Any]:
     return {
-        "name":
-            "Телевизоры",
+        "name": "Телевизоры",
         "description":
             "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
-        "list_categ":
-            ["kat1", "kat2", "kat3"],
+        "list_categ": ["kat1", "kat2", "kat3"],
     }
 
 
@@ -59,8 +58,7 @@ def dict_for_json() -> list[dict[Any, Any]]:
     return [
         {
             "name": "Смартфоны",
-            "description":
-                "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
+            "description": "Смартфоны, как средство не только коммуникации",
             "products": [
                 {
                     "name": "Samsung Galaxy C23 Ultra",
@@ -81,3 +79,25 @@ def dict_for_json() -> list[dict[Any, Any]]:
             ],
         },
     ]
+
+
+@pytest.fixture
+def category_with_products() -> Category:
+    return Category(
+        "Смартфоны",
+        "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
+        [
+            Product("Samsung Galaxy C23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5),
+            Product("айфон 14", "Яблочный смартфон", 70000.0, 14),
+        ],
+    )
+
+
+@pytest.fixture
+def product_dict1() -> dict[str, Any]:
+    return {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 31000.0, "quantity": 14}
+
+
+@pytest.fixture
+def product_dict2() -> dict[str, Any]:
+    return {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}

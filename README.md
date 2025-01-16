@@ -5,9 +5,12 @@
 Выполняет функционал в соответствии с ТЗ домашних работ. Реализовано создание объектов двух классов: Product и Category
 
 в модуле main.py  
-'''
-python main.py
-'''
+
+    '''
+    python main.py
+    '''
+содержатся тестовые функции которые позволяют проверить работоспособность системы согласно полученного ТЗ
+
 Так же в директрории /src реализованы дополнительные модули:
 
 - init.py
@@ -26,32 +29,31 @@ python main.py
 
 Склонировать репозиторий:
 
-'''
-git clone https://github.com/KharitonovAM/OOP_homework
-'''
+    '''
+    git clone https://github.com/KharitonovAM/OOP_homework
+    '''
 
 
 Создать и активировать виртуальное окружение:
 
        ```
 
-       python -m venv venv
+       poetry shell
 
-       source venv/bin/activate  # или venv\Scripts\activate для Windows
 
        ```
 Установить зависимости
 
        ```
 
-        pip install -r requirements.txt
+        poetry init
 
        ```
 Запуск проекта
 
        ```
 
-        python manage.py runserver
+        poetry run python
 
        ```
 
@@ -68,25 +70,25 @@ git clone https://github.com/KharitonovAM/OOP_homework
 
 Все функции залогированы, log файлы находятся в папке logs, настройки логирования реализованы в отдельном модуле по адресу:
 
-'''
-setting/setting.py
-'''
+    '''
+    setting/setting.py
+    '''
 Позволяет настроить путь сохраненияя информаии, режим перезаписи данных 
 Логирование по всему проекту храниться в файле:
 
-'''
-logs/logfile.txt
-'''
+    '''
+    logs/logfile.txt
+    '''
 
 Пример логирования основной работы программы:
 
-'''
-2025-01-10 17:28:27,206 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
-2025-01-10 17:28:27,206 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-10 17:28:27,206 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
-2025-01-10 17:28:27,206 - INFO- class_Category - Начало инициации объекта класса Category
-
-'''
+    '''
+    2025-01-10 17:28:27,206 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
+    2025-01-10 17:28:27,206 - INFO- class_Category - Начало инициации объекта класса Category
+    2025-01-10 17:28:27,206 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - ['Iphone 15', 'Iphone 14', 'Iphone 13']
+    2025-01-10 17:28:27,206 - INFO- class_Category - Начало инициации объекта класса Category
+    
+    '''
 
 ## Тестирование
 

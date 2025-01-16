@@ -2,16 +2,16 @@ import json
 import logging
 from typing import Any
 
+from setting.log_setting import my_log_config
 from src.category import Category
 from src.product import Product
-from setting.setting import my_log_config
 
 logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_init = logging.getLogger("modul init")
 
 
-def take_data_from_json(filename: str) -> dict[Any, Any]:
+def take_data_from_json(filename: str) -> Any:
     """Принимает на вход путь к json файлу, возвращает словать с информцей из json-файла"""
 
     logging_init.info(f"Старт извлечения данных из json файла {filename}")
