@@ -111,7 +111,10 @@ def test_new_price_chang_low2(my_phone: Product) -> None:
     assert z.price == 1500
 
 
-def test_magic_str_by_product(my_phone, capsys):
+def test_magic_str_by_product(my_phone: Product, capsys) -> None:
+    ''' Проверяем функционал, чо при вызове на печать объекта класса Product получаем результат
+    который требуется в соответствии с ТЗ'''
+
     print(my_phone)
     test_printer = capsys.readouterr()
-    assert test_printer.out == 'Iphone 15", 210000.0 руб. Остаток: 8 шт.'
+    assert test_printer.out == 'Iphone 15, 210000.0 руб. Остаток: 8 шт.\n'
