@@ -27,7 +27,7 @@ class Product:
     def __str__(self):
         '''Определяем правило для отображения печати объекта'''
 
-        pass
+        return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
 
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
