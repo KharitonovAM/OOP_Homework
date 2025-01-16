@@ -26,6 +26,7 @@ class Product:
 
     def __str__(self):
         '''Определяем правило для отображения печати объекта'''
+        logging_product.info(f'вызвали на печать объект класса Product {self.name}, {self.__price} руб. Остаток: {self.quantity}')
 
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
 
@@ -79,3 +80,8 @@ class Product:
         else:
             logging_product.info('Изменили на новую стоимость (как увеличение)')
             self.__price = new_price
+
+
+    def __add__(self, other):
+        '''Магический метод по сложению количества товара на складе'''
+        pass
