@@ -109,3 +109,9 @@ def test_new_price_chang_low2(my_phone: Product) -> None:
     z = my_phone
     z.price = 1500
     assert z.price == 1500
+
+
+def test_magic_str_by_product(my_phone, capsys):
+    print(my_phone)
+    test_printer = capsys.readouterr()
+    assert test_printer.out == 'Iphone 15", 210000.0 руб. Остаток: 8 шт.'
