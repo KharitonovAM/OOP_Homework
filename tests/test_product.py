@@ -112,9 +112,17 @@ def test_new_price_chang_low2(my_phone: Product) -> None:
 
 
 def test_magic_str_by_product(my_phone: Product, capsys) -> None:
-    ''' Проверяем функционал, чо при вызове на печать объекта класса Product получаем результат
+    ''' Проверяем функционал, что при вызове на печать объекта класса Product получаем результат
     который требуется в соответствии с ТЗ'''
 
     print(my_phone)
     test_printer = capsys.readouterr()
     assert test_printer.out == 'Iphone 15, 210000.0 руб. Остаток: 8 шт.\n'
+
+
+def test_add_by_product(my_phone: Product):
+    ''' Проверяем, что если сложить два объекта из класса Product
+    получим в результате сумму товаров на складе'''
+
+    test_other = Product('test_name', 'test_descripion', 150000, 15)
+    assert my_phone + test_other == 23
