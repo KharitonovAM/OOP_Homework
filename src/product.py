@@ -24,6 +24,11 @@ class Product:
             f"description - {description}, price - {price}, quantity-{quantity}"
         )
 
+    def __str__(self):
+        '''Определяем правило для отображения печати объекта'''
+
+        pass
+
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
