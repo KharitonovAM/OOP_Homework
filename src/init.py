@@ -22,7 +22,7 @@ class ProductIter:
         logging_init.info("Иницилиация объекта класса для перебора")
         self.category_object = category_object
 
-    def __iter__(self) -> ProductIter:
+    def __iter__(self):
         logging_init.info("Итератор содан")
         self.stop_step = -1
         return self

@@ -33,7 +33,7 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     @classmethod
-    def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []) -> Product:
+    def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
         так же может принимать на вход список объектов Продукт и если находит совпадение, то
         возвращает максимальную цену и сумму количества объектов в образованном объекте"""
@@ -85,7 +85,7 @@ class Product:
             logging_product.info("Изменили на новую стоимость (как увеличение)")
             self.__price = new_price
 
-    def __add__(self, other: Product) -> Any:
+    def __add__(self, other) -> Any:
         """Магический метод по сложению количества товара на складе"""
 
         logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
