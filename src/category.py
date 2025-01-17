@@ -55,7 +55,7 @@ class Category:
 
         logging_category.info("Выводим на экран информацию о продуктах")
         for product in self.__products:
-            print(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
+            print(product)
             logging_category.info(
                 f"Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
             )
