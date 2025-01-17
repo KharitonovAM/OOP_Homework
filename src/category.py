@@ -29,17 +29,15 @@ class Category:
             f"{name}, description - {description}, products - {products}"
         )
 
-
     def __str__(self):
-        '''Волшебный метод. который возвращает
-        Название категории, количество продуктов: сумма шт.'''
+        """Волшебный метод. который возвращает
+        Название категории, количество продуктов: сумма шт."""
 
-        logging_category.info('вызвали на печать __str__ Product')
+        logging_category.info("вызвали на печать __str__ Product")
         total_count = 0
         for prod in self.__products:
             total_count += prod.quantity
-        return (f'{self.name}, количество продуктов: {total_count} шт.')
-
+        return f"{self.name}, количество продуктов: {total_count} шт."
 
     def add_product(self, new_product: Product) -> None:
         """Добавляет новый объект класса Product в список продуктов"""
@@ -61,5 +59,5 @@ class Category:
             )
 
     def product_list(self):
-        '''Функция которая позволяет получиь список продуктов'''
+        """Функция которая позволяет получиь список продуктов"""
         return self.__products

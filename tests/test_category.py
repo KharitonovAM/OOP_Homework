@@ -81,10 +81,10 @@ def test_products(category_with_products: Category, capsys) -> None:
     )
 
 
-def test_str_class_category(category_with_products: Category, capsys):
-    '''Тестируем функцию __add__ класса Product
-    с помощью фикстуры которыю вызываем на печать'''
+def test_str_class_category(category_with_products: Category, capsys) -> None:
+    """Тестируем функцию __add__ класса Product
+    с помощью фикстуры которыю вызываем на печать"""
 
     print(category_with_products)
     test_print = capsys.readouterr()
-    assert test_print.out == 'Смартфоны, количество продуктов: 19 шт.\n'
+    assert test_print.out == "Смартфоны, количество продуктов: 19 шт.\n"

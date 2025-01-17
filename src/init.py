@@ -12,10 +12,11 @@ logging_init = logging.getLogger("modul init")
 
 z = Category
 
+
 class ProductIter:
-    '''Класс который позволяет перебирать продукты в категории
+    """Класс который позволяет перебирать продукты в категории
     на вход получает объект класса, а при итерации выводит продукты
-    из списка продуктов в классе'''
+    из списка продуктов в классе"""
 
     def __init__(self, category_object: Category):
         logging_init.info("Иницилиация объекта класса для перебора")
@@ -28,7 +29,7 @@ class ProductIter:
 
     def __next__(self):
         logging_init.info("Создали объект для вывода")
-        self.stop_step +=1
+        self.stop_step += 1
         if len(self.category_object.product_list()) > self.stop_step:
             return self.category_object.product_list()[self.stop_step]
         else:
@@ -65,15 +66,3 @@ def make_object_from_dict(inncomming_data: dict[Any, Any]) -> list[Any]:
         list_category.append(category)
         logging_init.info("объект класса Категория сформирован")
     return list_category
-
-
-z = Category(
-        "Смартфоны",
-        "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
-        [
-            Product("Samsung Galaxy C23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5),
-            Product("айфон 14", "Яблочный смартфон", 70000.0, 14),
-        ],
-    )
-for i in ProductIter(z):
-    print(i)

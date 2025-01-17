@@ -23,7 +23,4 @@ def test_make_object_from_dict(dict_for_json: dict[Any, Any]) -> None:
     test_object_list = make_object_from_dict(dict_for_json)
     print(test_object_list)
     assert test_object_list[0].name == "Смартфоны"
-    assert (
-        test_object_list[0].description
-        == "Смартфоны, как средство не только коммуникации"
-    )
+    assert test_object_list[0].description == "Смартфоны, как средство не только коммуникации"

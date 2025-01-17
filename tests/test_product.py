@@ -113,26 +113,26 @@ def test_new_price_chang_low2(my_phone: Product) -> None:
 
 
 def test_magic_str_by_product(my_phone: Product, capsys) -> None:
-    ''' Проверяем функционал, что при вызове на печать объекта класса Product получаем результат
-    который требуется в соответствии с ТЗ'''
+    """Проверяем функционал, что при вызове на печать объекта класса Product получаем результат
+    который требуется в соответствии с ТЗ"""
 
     print(my_phone)
     test_printer = capsys.readouterr()
-    assert test_printer.out == 'Iphone 15, 210000.0 руб. Остаток: 8 шт.\n'
+    assert test_printer.out == "Iphone 15, 210000.0 руб. Остаток: 8 шт.\n"
 
 
 def test_add_by_product(my_phone: Product):
-    ''' Проверяем, что если сложить два объекта из класса Product
-    получим в результате сумму товаров на складе'''
+    """Проверяем, что если сложить два объекта из класса Product
+    получим в результате сумму товаров на складе"""
 
-    test_other = Product('test_name', 'test_descripion', 150000, 15)
-    assert my_phone + test_other == 8*210000+150000*15
+    test_other = Product("test_name", "test_descripion", 150000, 15)
+    assert my_phone + test_other == 8 * 210000 + 150000 * 15
 
 
-def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys):
-    '''Проверяем что при попытке сложения двух объектов один из которых не Product
-    возбуждается исключение'''
+def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys) -> None:
+    """Проверяем что при попытке сложения двух объектов один из которых не Product
+    возбуждается исключение"""
 
     my_phone + category_with_products
     my_print = capsys.readouterr()
-    assert my_print.out == 'Оба объекта должны быть класса Product\n'
+    assert my_print.out == "Оба объекта должны быть класса Product\n"
