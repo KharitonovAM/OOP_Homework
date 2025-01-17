@@ -125,4 +125,4 @@ def test_add_by_product(my_phone: Product):
     получим в результате сумму товаров на складе'''
 
     test_other = Product('test_name', 'test_descripion', 150000, 15)
-    assert my_phone + test_other == 23
+    assert my_phone + test_other == 8*210000+150000*15

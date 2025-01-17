@@ -84,4 +84,6 @@ class Product:
 
     def __add__(self, other):
         '''Магический метод по сложению количества товара на складе'''
-        pass
+
+        comman_price = self.quantity * self.__price + other.quantity * other.__price
+        return comman_price
