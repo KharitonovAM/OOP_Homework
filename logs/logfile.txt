@@ -1,14 +1,13 @@
-2025-01-17 21:21:45,105 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-17 21:21:45,105 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-17 21:21:45,105 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-17 21:21:45,105 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
-2025-01-17 21:21:45,105 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-17 21:21:45,105 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x0000018413E58E60>, <src.product.Product object at 0x0000018413E58FE0>]
-2025-01-17 21:21:45,105 - INFO- class_Category - вызвали на печать __str__ Product
-2025-01-17 21:21:45,105 - INFO- class_Category - Выводим на экран информацию о продуктах
-2025-01-17 21:21:45,106 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5
-2025-01-17 21:21:45,106 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy C23 Ultra
-2025-01-17 21:21:45,106 - INFO- class_Category - Вывели на экран: Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
-2025-01-17 21:21:45,106 - INFO- class_Product - вызвали на печать объект класса Product айфон 14, 70000.0 руб. Остаток: 14
-2025-01-17 21:21:45,106 - INFO- class_Product - Поступил запрос по получению данных цены у айфон 14
-2025-01-17 21:21:45,106 - INFO- class_Category - Вывели на экран: айфон 14, 70000.0 руб. Остаток: 14 шт.
+2025-01-18 00:10:46,048 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-18 00:10:46,048 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-18 00:10:46,048 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-18 00:10:46,048 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
+2025-01-18 00:10:46,048 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-18 00:10:46,048 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x000001665D9495B0>, <src.product.Product object at 0x000001665DAFE8A0>]
+2025-01-18 00:10:46,048 - INFO- class_Category - Выводим на экран информацию о продуктах
+2025-01-18 00:10:46,049 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5
+2025-01-18 00:10:46,049 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy C23 Ultra
+2025-01-18 00:10:46,049 - INFO- class_Category - Вывели на экран: Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
+2025-01-18 00:10:46,049 - INFO- class_Product - вызвали на печать объект класса Product айфон 14, 70000.0 руб. Остаток: 14
+2025-01-18 00:10:46,049 - INFO- class_Product - Поступил запрос по получению данных цены у айфон 14
+2025-01-18 00:10:46,049 - INFO- class_Category - Вывели на экран: айфон 14, 70000.0 руб. Остаток: 14 шт.

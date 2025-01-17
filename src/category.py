@@ -59,3 +59,7 @@ class Category:
             logging_category.info(
                 f"Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
             )
+
+    def product_list(self):
+        '''Функция которая позволяет получиь список продуктов'''
+        return self.__products
