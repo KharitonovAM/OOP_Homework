@@ -135,4 +135,4 @@ def test_add_by_product_wrong_class(my_phone: Product, category_with_products: C
 
     my_phone + category_with_products
     my_print = capsys.readouterr()
-    assert my_print.out == 'Оба объекта должны быть класса Product'
+    assert my_print.out == 'Оба объекта должны быть класса Product\n'
