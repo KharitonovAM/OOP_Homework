@@ -79,3 +79,12 @@ def test_products(category_with_products: Category, capsys) -> None:
         == """Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
 айфон 14, 70000.0 руб. Остаток: 14 шт.\n"""
     )
+
+
+def test_str_class_category(category_with_products: Category, capsys):
+    '''Тестируем функцию __add__ класса Product
+    с помощью фикстуры которыю вызываем на печать'''
+
+    print(category_with_products)
+    test_print = capsys.readouterr()
+    assert test_print.out == 'Смартфоны, количество продуктов: 19 шт.\n'

@@ -36,9 +36,9 @@ class Category:
 
         logging_category.info('вызвали на печать __str__ Product')
         total_count = 0
-        for prod in self.____products:
+        for prod in self.__products:
             total_count += prod.quantity
-        return print(f'{self.__class__.__name__}, количество продуктов: {total_count} шт.')
+        return (f'{self.name}, количество продуктов: {total_count} шт.')
 
 
     def add_product(self, new_product: Product) -> None:
