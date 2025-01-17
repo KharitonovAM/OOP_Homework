@@ -84,7 +84,7 @@ def test_new_price() -> None:
 
 
 @patch("src.product.input", side_effect=["y"])
-def test_new_price_low_0(capsys) -> None:
+def test_new_price_low_0(capsys: pytest.CaptureFixture) -> None:
     """Проверяем корректность поведения при попытке установить стоимость ниже 0"""
     my_phone = Product("product_name", "product_decription", 200000, 5)
     my_phone.price = -1500000
@@ -112,7 +112,7 @@ def test_new_price_chang_low2(my_phone: Product) -> None:
     assert z.price == 1500
 
 
-def test_magic_str_by_product(my_phone: Product, capsys) -> None:
+def test_magic_str_by_product(my_phone: Product, capsys: pytest.CaptureFixture) -> None:
     """Проверяем функционал, что при вызове на печать объекта класса Product получаем результат
     который требуется в соответствии с ТЗ"""
 
@@ -121,7 +121,7 @@ def test_magic_str_by_product(my_phone: Product, capsys) -> None:
     assert test_printer.out == "Iphone 15, 210000.0 руб. Остаток: 8 шт.\n"
 
 
-def test_add_by_product(my_phone: Product):
+def test_add_by_product(my_phone: Product) -> None:
     """Проверяем, что если сложить два объекта из класса Product
     получим в результате сумму товаров на складе"""
 
@@ -129,7 +129,7 @@ def test_add_by_product(my_phone: Product):
     assert my_phone + test_other == 8 * 210000 + 150000 * 15
 
 
-def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys) -> None:
+def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
     """Проверяем что при попытке сложения двух объектов один из которых не Product
     возбуждается исключение"""
 

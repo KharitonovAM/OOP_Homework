@@ -69,7 +69,7 @@ def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
         tv_category.add_product(wrong_data)
 
 
-def test_products(category_with_products: Category, capsys) -> None:
+def test_products(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
     """Тестируем, что функция выводит данные по продуктам согласно ТЗ"""
 
     category_with_products.products
@@ -81,7 +81,7 @@ def test_products(category_with_products: Category, capsys) -> None:
     )
 
 
-def test_str_class_category(category_with_products: Category, capsys) -> None:
+def test_str_class_category(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
     """Тестируем функцию __add__ класса Product
     с помощью фикстуры которыю вызываем на печать"""
 

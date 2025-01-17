@@ -29,7 +29,7 @@ class Category:
             f"{name}, description - {description}, products - {products}"
         )
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Волшебный метод. который возвращает
         Название категории, количество продуктов: сумма шт."""
 
@@ -58,6 +58,6 @@ class Category:
                 f"Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
             )
 
-    def product_list(self):
+    def product_list(self) -> list[Product]:
         """Функция которая позволяет получиь список продуктов"""
         return self.__products

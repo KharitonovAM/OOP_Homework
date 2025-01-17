@@ -18,16 +18,16 @@ class ProductIter:
     на вход получает объект класса, а при итерации выводит продукты
     из списка продуктов в классе"""
 
-    def __init__(self, category_object: Category):
+    def __init__(self, category_object: Category) -> None:
         logging_init.info("Иницилиация объекта класса для перебора")
         self.category_object = category_object
 
-    def __iter__(self):
+    def __iter__(self) -> ProductIter:
         logging_init.info("Итератор содан")
         self.stop_step = -1
         return self
 
-    def __next__(self):
+    def __next__(self) -> Any:
         logging_init.info("Создали объект для вывода")
         self.stop_step += 1
         if len(self.category_object.product_list()) > self.stop_step:
