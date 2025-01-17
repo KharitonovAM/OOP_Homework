@@ -1,28 +1,28 @@
-2025-01-18 00:55:36,094 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-18 00:55:36,094 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy S23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-18 00:55:36,094 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-18 00:55:36,094 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
-2025-01-18 00:55:36,094 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-18 00:55:36,094 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
-2025-01-18 00:55:36,094 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5
-2025-01-18 00:55:36,094 - INFO- class_Product - вызвали на печать объект класса Product Iphone 15, 210000.0 руб. Остаток: 8
-2025-01-18 00:55:36,094 - INFO- class_Product - вызвали на печать объект класса Product Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14
-2025-01-18 00:55:36,094 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-18 00:55:36,094 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x000001D7ECE23BC0>, <src.product.Product object at 0x000001D7ECE23BF0>, <src.product.Product object at 0x000001D7ECE58170>]
-2025-01-18 00:55:36,094 - INFO- class_Category - вызвали на печать __str__ Product
-2025-01-18 00:55:36,094 - INFO- class_Category - Выводим на экран информацию о продуктах
-2025-01-18 00:55:36,094 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5
-2025-01-18 00:55:36,095 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy S23 Ultra
-2025-01-18 00:55:36,095 - INFO- class_Category - Вывели на экран: Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.
-2025-01-18 00:55:36,095 - INFO- class_Product - вызвали на печать объект класса Product Iphone 15, 210000.0 руб. Остаток: 8
-2025-01-18 00:55:36,095 - INFO- class_Product - Поступил запрос по получению данных цены у Iphone 15
-2025-01-18 00:55:36,095 - INFO- class_Category - Вывели на экран: Iphone 15, 210000.0 руб. Остаток: 8 шт.
-2025-01-18 00:55:36,095 - INFO- class_Product - вызвали на печать объект класса Product Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14
-2025-01-18 00:55:36,095 - INFO- class_Product - Поступил запрос по получению данных цены у Xiaomi Redmi Note 11
-2025-01-18 00:55:36,095 - INFO- class_Category - Вывели на экран: Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.
-2025-01-18 00:55:36,095 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
-2025-01-18 00:55:36,095 - INFO- class_Product - Сложение прошло нормально резульатат 2580000.0
-2025-01-18 00:55:36,095 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
-2025-01-18 00:55:36,095 - INFO- class_Product - Сложение прошло нормально резульатат 1334000.0
-2025-01-18 00:55:36,095 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
-2025-01-18 00:55:36,095 - INFO- class_Product - Сложение прошло нормально резульатат 2114000.0
+2025-01-18 01:06:27,681 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-18 01:06:27,681 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy S23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-18 01:06:27,681 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-18 01:06:27,681 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-18 01:06:27,681 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-18 01:06:27,681 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-18 01:06:27,681 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5
+2025-01-18 01:06:27,681 - INFO- class_Product - вызвали на печать объект класса Product Iphone 15, 210000.0 руб. Остаток: 8
+2025-01-18 01:06:27,681 - INFO- class_Product - вызвали на печать объект класса Product Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14
+2025-01-18 01:06:27,681 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-18 01:06:27,681 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x00000272FDE33C50>, <src.product.Product object at 0x00000272FDE33C80>, <src.product.Product object at 0x00000272FDE6B890>]
+2025-01-18 01:06:27,681 - INFO- class_Category - вызвали на печать __str__ Product
+2025-01-18 01:06:27,681 - INFO- class_Category - Выводим на экран информацию о продуктах
+2025-01-18 01:06:27,681 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5
+2025-01-18 01:06:27,682 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy S23 Ultra
+2025-01-18 01:06:27,682 - INFO- class_Category - Вывели на экран: Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.
+2025-01-18 01:06:27,682 - INFO- class_Product - вызвали на печать объект класса Product Iphone 15, 210000.0 руб. Остаток: 8
+2025-01-18 01:06:27,682 - INFO- class_Product - Поступил запрос по получению данных цены у Iphone 15
+2025-01-18 01:06:27,682 - INFO- class_Category - Вывели на экран: Iphone 15, 210000.0 руб. Остаток: 8 шт.
+2025-01-18 01:06:27,682 - INFO- class_Product - вызвали на печать объект класса Product Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14
+2025-01-18 01:06:27,682 - INFO- class_Product - Поступил запрос по получению данных цены у Xiaomi Redmi Note 11
+2025-01-18 01:06:27,682 - INFO- class_Category - Вывели на экран: Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.
+2025-01-18 01:06:27,682 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-18 01:06:27,682 - INFO- class_Product - Сложение прошло нормально резульатат 2580000.0
+2025-01-18 01:06:27,682 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-18 01:06:27,682 - INFO- class_Product - Сложение прошло нормально резульатат 1334000.0
+2025-01-18 01:06:27,682 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-18 01:06:27,682 - INFO- class_Product - Сложение прошло нормально резульатат 2114000.0

@@ -9,7 +9,7 @@ if __name__ == '__main__':
     print(str(product1))
     print(str(product2))
     print(str(product3))
-
+    print('1----------------------------')
     category1 = Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
@@ -17,9 +17,9 @@ if __name__ == '__main__':
     )
 
     print(str(category1))
-
+    print('2----------------------------')
     print(category1.products)
-
+    print('3----------------------------')
     print(product1 + product2)
     print(product1 + product3)
     print(product2 + product3)

@@ -52,11 +52,11 @@ class Category:
         """Геттер, выводящий информацию о продуктах, находящихся в категории"""
 
         logging_category.info("Выводим на экран информацию о продуктах")
-        for product in self.__products:
-            print(product)
+        for i in range((len(self.__products))):
+            print(self.__products[i])
             logging_category.info(
-                f"Вывели на экран: {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
-            )
+                    f"Вывели на экран: {self.__products[i].name}, {self.__products[i].price} руб. Остаток: {self.__products[i].quantity} шт."
+                )
 
     def product_list(self) -> list[Product]:
         """Функция которая позволяет получиь список продуктов"""
