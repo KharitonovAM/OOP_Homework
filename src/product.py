@@ -85,8 +85,11 @@ class Product:
     def __add__(self, other):
         '''Магический метод по сложению количества товара на складе'''
 
+        logging_product.info('Вызвана попвтка сложить два объекта класса Product ')
         try:
             comman_price = self.quantity * self.__price + other.quantity * other.__price
+            logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
             return comman_price
         except:
+            logging_product.error(f'Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}')
             print('Оба объекта должны быть класса Product')
