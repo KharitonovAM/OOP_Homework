@@ -1,8 +1,8 @@
-2025-01-17 19:51:55,649 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-17 19:51:55,649 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
-2025-01-17 19:51:55,649 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-17 19:51:55,649 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-17 19:51:55,649 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-17 19:51:55,649 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
-2025-01-17 19:51:55,650 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-17 19:51:55,650 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x0000017D094C1190>, <src.product.Product object at 0x0000017D0AE6B8C0>]
+2025-01-17 19:54:19,407 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-17 19:54:19,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-17 19:54:19,408 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-17 19:54:19,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-17 19:54:19,408 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-17 19:54:19,408 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
+2025-01-17 19:54:19,408 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-17 19:54:19,408 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x000001E7E3C64290>, <src.product.Product object at 0x000001E7E44D1B20>]
