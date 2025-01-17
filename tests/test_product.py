@@ -4,6 +4,7 @@ from unittest.mock import patch
 import pytest
 
 from src.product import Product
+from src.category import Category
 
 
 def test_making_object_Product(my_phone: Product) -> None:
@@ -126,3 +127,12 @@ def test_add_by_product(my_phone: Product):
 
     test_other = Product('test_name', 'test_descripion', 150000, 15)
     assert my_phone + test_other == 8*210000+150000*15
+
+
+def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys):
+    '''Проверяем что при попытке сложения двух объектов один из которых не Product
+    возбуждается исключение'''
+
+    my_phone + category_with_products
+    my_print = capsys.readouterr()
+    assert my_print.out == 'Оба объекта должны быть класса Product'
