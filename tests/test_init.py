@@ -2,7 +2,7 @@ import json
 import os
 from typing import Any
 
-from src.init import make_object_from_dict, take_data_from_json
+from src.init import make_object_from_dict, take_data_from_json, ProductIter
 
 
 def test_take_data_from_json(my_dict: dict[Any, Any]) -> None:
@@ -23,7 +23,4 @@ def test_make_object_from_dict(dict_for_json: dict[Any, Any]) -> None:
     test_object_list = make_object_from_dict(dict_for_json)
     print(test_object_list)
     assert test_object_list[0].name == "Смартфоны"
-    assert (
-        test_object_list[0].description
-        == "Смартфоны, как средство не только коммуникации"
-    )
+    assert test_object_list[0].description == "Смартфоны, как средство не только коммуникации"

@@ -10,6 +10,32 @@ logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_init = logging.getLogger("modul init")
 
+z = Category
+
+
+class ProductIter:
+    """Класс который позволяет перебирать продукты в категории
+    на вход получает объект класса, а при итерации выводит продукты
+    из списка продуктов в классе"""
+
+    def __init__(self, category_object: Category) -> None:
+        logging_init.info("Иницилиация объекта класса для перебора")
+        self.category_object = category_object
+
+    def __iter__(self):
+        logging_init.info("Итератор содан")
+        self.stop_step = -1
+        return self
+
+    def __next__(self) -> Any:
+        logging_init.info("Создали объект для вывода")
+        self.stop_step += 1
+        if len(self.category_object.product_list()) > self.stop_step:
+            return self.category_object.product_list()[self.stop_step]
+        else:
+            logging_init.info("Процесс итерации завершён планово")
+            raise StopIteration
+
 
 def take_data_from_json(filename: str) -> Any:
     """Принимает на вход путь к json файлу, возвращает словать с информцей из json-файла"""
