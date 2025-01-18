@@ -24,3 +24,12 @@ def test_make_object_from_dict(dict_for_json: dict[Any, Any]) -> None:
     print(test_object_list)
     assert test_object_list[0].name == "Смартфоны"
     assert test_object_list[0].description == "Смартфоны, как средство не только коммуникации"
+
+
+def test_product_iter(category_with_products, capsys):
+    test_iter = ProductIter(category_with_products)
+    for item in test_iter:
+        print(item)
+    my_printer = capsys.readouterr()
+    assert my_printer.out == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
+ 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n')
