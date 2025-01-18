@@ -72,13 +72,13 @@ def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
 def test_products(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
     """Тестируем, что функция выводит данные по продуктам согласно ТЗ"""
 
-    category_with_products.products
+    print(category_with_products.products)
     captured = capsys.readouterr()
     assert (
         captured.out
-        == """Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.
-айфон 14, 70000.0 руб. Остаток: 14 шт.\n"""
-    )
+        == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
+ 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n'
+ '\n'))
 
 
 def test_str_class_category(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:

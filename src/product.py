@@ -32,6 +32,18 @@ class Product:
 
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
+    def __add__(self, other) -> Any:
+        """Магический метод по сложению количества товара на складе"""
+
+        logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
+        try:
+            comman_price = self.quantity * self.__price + other.quantity * other.__price
+            logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
+            return comman_price
+        except:
+            logging_product.error(f"Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}")
+            print("Оба объекта должны быть класса Product")
+
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
@@ -56,7 +68,6 @@ class Product:
     def price(self) -> float:
         """Геттер для получения данных о значении параметра цена"""
         logging_product.info(f"Поступил запрос по получению данных цены у {self.name}")
-
         return self.__price
 
     @price.setter
@@ -84,15 +95,3 @@ class Product:
         else:
             logging_product.info("Изменили на новую стоимость (как увеличение)")
             self.__price = new_price
-
-    def __add__(self, other) -> Any:
-        """Магический метод по сложению количества товара на складе"""
-
-        logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
-        try:
-            comman_price = self.quantity * self.__price + other.quantity * other.__price
-            logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
-            return comman_price
-        except:
-            logging_product.error(f"Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}")
-            print("Оба объекта должны быть класса Product")
