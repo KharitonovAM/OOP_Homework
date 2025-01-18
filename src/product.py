@@ -95,3 +95,10 @@ class Product:
         else:
             logging_product.info("Изменили на новую стоимость (как увеличение)")
             self.__price = new_price
+
+
+if __name__ == '__main__':
+    my_product = Product("product_name", "product_decription", 200000, 5)
+
+    my_product.price = 10000
+    print(my_product.price)
