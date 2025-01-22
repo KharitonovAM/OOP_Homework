@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 
 from src.category import Category
-from src.product import Product, Smartphone
+from src.product import Product, Smartphone, LawnGrass
 
 
 @pytest.fixture
@@ -104,3 +104,8 @@ def product_dict2() -> dict[str, Any]:
 @pytest.fixture
 def smartfon_product() -> None:
     return Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
+
+
+@pytest.fixture
+def lawngrass_product() -> None:
+    return LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")

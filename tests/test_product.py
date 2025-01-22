@@ -4,7 +4,7 @@ from unittest.mock import patch
 import pytest
 
 from src.category import Category
-from src.product import Product, Smartphone
+from src.product import Product, Smartphone, LawnGrass
 
 
 def test_making_object_Product(my_phone: Product) -> None:
@@ -148,3 +148,15 @@ def test_creation_smartfone(smartfon_product: Smartphone) -> None:
     assert smartfon_product.model == "15"
     assert smartfon_product.memory == 512
     assert smartfon_product.color == "Gray space"
+
+
+def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
+    '''Тест проверяет. что созданный объект класса LawnGrass соответствует ТЗ'''
+
+    assert lawngrass_product.name == "Газонная трава"
+    assert lawngrass_product.description == "Элитная трава для газона"
+    assert lawngrass_product.price == 500.0
+    assert lawngrass_product.quantity == 20
+    assert lawngrass_product.country == "Россия"
+    assert lawngrass_product.germination_period == "7 дней"
+    assert lawngrass_product.color == "Зеленый"
