@@ -160,3 +160,8 @@ def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
     assert lawngrass_product.country == "Россия"
     assert lawngrass_product.germination_period == "7 дней"
     assert lawngrass_product.color == "Зеленый"
+
+
+def test_add_product_diff_classes(lawngrass_product, smartfon_product):
+    with pytest.raises(TypeError):
+        assert lawngrass_product + smartfon_product == 1690000.0
