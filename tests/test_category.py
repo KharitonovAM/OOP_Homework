@@ -74,11 +74,9 @@ def test_products(category_with_products: Category, capsys: pytest.CaptureFixtur
 
     print(category_with_products.products)
     captured = capsys.readouterr()
-    assert (
-        captured.out
-        == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
- 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n'
- '\n'))
+    assert captured.out == (
+        "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n" "айфон 14, 70000.0 руб. Остаток: 14 шт.\n" "\n"
+    )
 
 
 def test_str_class_category(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
@@ -91,8 +89,10 @@ def test_str_class_category(category_with_products: Category, capsys: pytest.Cap
 
 
 def test_try_add_wrong_category(category_with_products) -> None:
-    ''' Тестируем, что при попытке добавить в объект класса категории объект,
-    которые не является классом Продукт или его дочерним классаом, вызывается ошибка'''
+    """Тестируем, что при попытке добавить в объект класса категории объект,
+    которые не является классом Продукт или его дочерним классаом, вызывается ошибка"""
 
     with pytest.raises(TypeError):
-        category_with_products.add_product(Category('new_category', 'test_category', ['test_category', 'test_category', 'test_category']))
+        category_with_products.add_product(
+            Category("new_category", "test_category", ["test_category", "test_category", "test_category"])
+        )

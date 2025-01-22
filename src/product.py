@@ -101,27 +101,46 @@ class Product:
 
 
 class Smartphone(Product):
-    '''Класс по созданию объектов Смартфон, является дочерним от класса Продукт'''
+    """Класс по созданию объектов Смартфон, является дочерним от класса Продукт"""
 
-    def __init__(self, name: str, description: str, price: float, quantity: int, efficiency:float, model: str, memory: int, color: str):
-        '''Инициализация объекта класса Smartphone'''
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: float,
+        model: str,
+        memory: int,
+        color: str,
+    ):
+        """Инициализация объекта класса Smartphone"""
 
-        logging_product.info('Старт инициализации объекта смартфон')
+        logging_product.info("Старт инициализации объекта смартфон")
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
         self.color = color
-        logging_product.info('объект класса смартфон инициализирован полностью')
+        logging_product.info("объект класса смартфон инициализирован полностью")
 
 
 class LawnGrass(Product):
-    def __init__(self, name: str, description: str, price: float, quantity: int, country:str, germination_period: str, color: str):
-        '''Инициализация объекта класса Smartphone'''
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
+    ):
+        """Инициализация объекта класса Smartphone"""
 
-        logging_product.info('Старт инициализации объекта Трава Газонная')
+        logging_product.info("Старт инициализации объекта Трава Газонная")
         super().__init__(name, description, price, quantity)
         self.country = country
         self.germination_period = germination_period
         self.color = color
-        logging_product.info('объект класса Трава Газонная инициализирован полностью')
+        logging_product.info("объект класса Трава Газонная инициализирован полностью")

@@ -50,20 +50,18 @@ class Category:
             logging_category.error("Попытка добавить продукт с наименованием завершилась ошибкой")
             raise TypeError
 
-
     @property
     def products(self) -> None:
         """Геттер, выводящий информацию о продуктах, находящихся в категории"""
 
-        data_about_products = ''
+        data_about_products = ""
         logging_category.info("Выводим на экран информацию о продуктах")
         for i in range((len(self.__products))):
-            data_about_products += f'{self.__products[i]}\n'
+            data_about_products += f"{self.__products[i]}\n"
             logging_category.info(
-                    f"Вывели на экран: {self.__products[i].name}, {self.__products[i].price} руб. Остаток: {self.__products[i].quantity} шт."
-                )
+                f"Вывели на экран: {self.__products[i].name}, {self.__products[i].price} руб. Остаток: {self.__products[i].quantity} шт."
+            )
         return data_about_products
-
 
     def product_list(self) -> list[Product]:
         """Функция которая позволяет получиь список продуктов"""

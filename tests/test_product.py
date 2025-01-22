@@ -92,9 +92,9 @@ def test_new_price_low_0(capsys: pytest.CaptureFixture) -> None:
     assert my_priner
 
 
-@patch('src.product.input', side_effect=['g','n'])
+@patch("src.product.input", side_effect=["g", "n"])
 def test_new_price_chang_low(input, my_phone):
-    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+    """Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую"""
 
     my_phone.price = 1500
     assert my_phone.price == 210000.0
@@ -127,10 +127,10 @@ def test_add_by_product(my_phone: Product) -> None:
 
 
 def test_creation_smartfone(smartfon_product: Smartphone) -> None:
-    '''Тест проверяет что создаётся объект класса Cmartfone и что атрибуты соответствуют ожиданиям
-    для тестирования применяется фикстура smartfon_product'''
+    """Тест проверяет что создаётся объект класса Cmartfone и что атрибуты соответствуют ожиданиям
+    для тестирования применяется фикстура smartfon_product"""
 
-    assert smartfon_product.name == 'Iphone 15'
+    assert smartfon_product.name == "Iphone 15"
     assert smartfon_product.description == "512GB, Gray space"
     assert smartfon_product.price == 210000.0
     assert smartfon_product.quantity == 8
@@ -141,7 +141,7 @@ def test_creation_smartfone(smartfon_product: Smartphone) -> None:
 
 
 def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
-    '''Тест проверяет. что созданный объект класса LawnGrass соответствует ТЗ'''
+    """Тест проверяет. что созданный объект класса LawnGrass соответствует ТЗ"""
 
     assert lawngrass_product.name == "Газонная трава"
     assert lawngrass_product.description == "Элитная трава для газона"

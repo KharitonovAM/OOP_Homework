@@ -31,5 +31,6 @@ def test_product_iter(category_with_products, capsys):
     for item in test_iter:
         print(item)
     my_printer = capsys.readouterr()
-    assert my_printer.out == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
- 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n')
+    assert my_printer.out == (
+        "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n" "айфон 14, 70000.0 руб. Остаток: 14 шт.\n"
+    )
