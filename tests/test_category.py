@@ -88,3 +88,11 @@ def test_str_class_category(category_with_products: Category, capsys: pytest.Cap
     print(category_with_products)
     test_print = capsys.readouterr()
     assert test_print.out == "Смартфоны, количество продуктов: 19 шт.\n"
+
+
+def test_try_add_wrong_category(category_with_products) -> None:
+    ''' Тестируем, что при попытке добавить в объект класса категории объект,
+    которые не является классом Продукт или его дочерним классаом, вызывается ошибка'''
+
+    with pytest.raises(TypeError):
+        category_with_products.add_product(Category('new_category', 'test_category', ['test_category', 'test_category', 'test_category']))
