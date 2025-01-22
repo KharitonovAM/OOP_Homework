@@ -97,6 +97,11 @@ class Product:
             self.__price = new_price
 
 
+class Smartphone(Product):
+    '''Класс по созданию объектов Смартфон'''
+    pass
+
+
 if __name__ == '__main__':
     my_product = Product("product_name", "product_decription", 200000, 5)
 

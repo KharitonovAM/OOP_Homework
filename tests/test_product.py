@@ -4,7 +4,7 @@ from unittest.mock import patch
 import pytest
 
 from src.category import Category
-from src.product import Product
+from src.product import Product, Smartphone
 
 
 def test_making_object_Product(my_phone: Product) -> None:
@@ -133,3 +133,18 @@ def test_add_by_product_wrong_class(my_phone: Product, category_with_products: C
     my_phone + category_with_products
     my_print = capsys.readouterr()
     assert my_print.out == "Оба объекта должны быть класса Product\n"
+
+
+
+def test_creation_smartfone(smartfon_product: Smartphone) -> None:
+    '''Тест проверяет что создаётся объект класса Cmartfone и что атрибуты соответствуют ожиданиям
+    для тестирования применяется фикстура smartfon_product'''
+
+    assert smartfon_product.name == 'Iphone 15'
+    assert smartfon_product.description == "512GB, Gray space"
+    assert smartfon_product.price == 210000.0
+    assert smartfon_product.quantity == 8
+    assert smartfon_product.efficiency == 98.2
+    assert smartfon_product.model == "15"
+    assert smartfon_product.memory == 512
+    assert smartfon_product.color == "Gray space"
