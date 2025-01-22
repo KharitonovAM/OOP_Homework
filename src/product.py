@@ -113,6 +113,10 @@ class Smartphone(Product):
         logging_product.info('объект класса смартфон инициализирован полностью')
 
 
+class LawnGrass(Product):
+    pass
+
+
 if __name__ == '__main__':
     my_product = Product("product_name", "product_decription", 200000, 5)
 
