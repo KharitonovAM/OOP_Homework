@@ -2,7 +2,7 @@ import json
 import os
 from typing import Any
 
-from src.init import make_object_from_dict, take_data_from_json, ProductIter
+from src.init import ProductIter, make_object_from_dict, take_data_from_json
 
 
 def test_take_data_from_json(my_dict: dict[Any, Any]) -> None:

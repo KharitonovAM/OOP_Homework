@@ -4,7 +4,7 @@ from unittest.mock import patch
 import pytest
 
 from src.category import Category
-from src.product import Product, Smartphone, LawnGrass
+from src.product import LawnGrass, Product, Smartphone
 
 
 def test_making_object_Product(my_phone: Product) -> None:
