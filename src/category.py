@@ -2,7 +2,7 @@ import logging
 from typing import Any
 
 from setting.log_setting import my_log_config
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 
 logging.basicConfig = my_log_config
 # определяем именные логеры
@@ -39,13 +39,17 @@ class Category:
             total_count += prod.quantity
         return f"{self.name}, количество продуктов: {total_count} шт."
 
-    def add_product(self, new_product: Product) -> None:
+    def add_product(self, new_product: Any) -> None:
         """Добавляет новый объект класса Product в список продуктов"""
-
         logging_category.info(f"Начиинаем добавлять в список продуктов {new_product.name}")
-        Category.product_count += 1
-        logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
-        self.__products.append(new_product)
+        if issubclass(type(new_product), Product):
+            Category.product_count += 1
+            self.__products.append(new_product)
+            logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
+        else:
+            logging_category.error(f"Попытка добавить продукт с наименованием {new_product.name} в {self.name} завершилась ошибкой")
+            raise TypeError
+
 
     @property
     def products(self) -> None:
