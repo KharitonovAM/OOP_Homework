@@ -98,8 +98,19 @@ class Product:
 
 
 class Smartphone(Product):
-    '''Класс по созданию объектов Смартфон'''
-    pass
+    '''Класс по созданию объектов Смартфон, является дочерним от класса Продукт'''
+
+
+    def __init__(self, name: str, description: str, price: float, quantity: int, efficiency:float, model: str, memory: int, color: str):
+        '''Инициализация объекта класса Smartphone'''
+
+        logging_product.info('Старт инициализации объекта смартфон')
+        super().__init__(name, description, price, quantity)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
+        logging_product.info('объект класса смартфон инициализирован полностью')
 
 
 if __name__ == '__main__':
