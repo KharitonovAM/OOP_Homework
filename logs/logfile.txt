@@ -1,10 +1,49 @@
-2025-01-22 13:21:12,600 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-22 13:21:12,600 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy C23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
-2025-01-22 13:21:12,600 - INFO- class_Product - Начало инициации объекта класса Category
-2025-01-22 13:21:12,600 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - айфон 14, description - Яблочный смартфон, price - 70000.0, quantity-14
-2025-01-22 13:21:12,600 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-22 13:21:12,601 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни, products - [<src.product.Product object at 0x000002988EE9E840>, <src.product.Product object at 0x00000298908AA870>]
-2025-01-22 13:21:12,601 - INFO- class_Category - Начало инициации объекта класса Category
-2025-01-22 13:21:12,602 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - new_category, description - test_category, products - ['test_category', 'test_category', 'test_category']
-2025-01-22 13:21:12,602 - INFO- class_Category - Начиинаем добавлять в список продуктов new_category
-2025-01-22 13:21:12,602 - ERROR- class_Category - Попытка добавить продукт с наименованием new_category в Смартфоны завершилась ошибкой
+2025-01-22 13:26:52,053 - INFO- class_Product - Старт инициализации объекта смартфон
+2025-01-22 13:26:52,053 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-22 13:26:52,053 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Samsung Galaxy S23 Ultra, description - 256GB, Серый цвет, 200MP камера, price - 180000.0, quantity-5
+2025-01-22 13:26:52,053 - INFO- class_Product - объект класса смартфон инициализирован полностью
+2025-01-22 13:26:52,053 - INFO- class_Product - Старт инициализации объекта смартфон
+2025-01-22 13:26:52,053 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-22 13:26:52,054 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Iphone 15, description - 512GB, Gray space, price - 210000.0, quantity-8
+2025-01-22 13:26:52,054 - INFO- class_Product - объект класса смартфон инициализирован полностью
+2025-01-22 13:26:52,054 - INFO- class_Product - Старт инициализации объекта смартфон
+2025-01-22 13:26:52,054 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-22 13:26:52,054 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Xiaomi Redmi Note 11, description - 1024GB, Синий, price - 31000.0, quantity-14
+2025-01-22 13:26:52,054 - INFO- class_Product - объект класса смартфон инициализирован полностью
+2025-01-22 13:26:52,054 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy S23 Ultra
+2025-01-22 13:26:52,054 - INFO- class_Product - Поступил запрос по получению данных цены у Iphone 15
+2025-01-22 13:26:52,054 - INFO- class_Product - Поступил запрос по получению данных цены у Xiaomi Redmi Note 11
+2025-01-22 13:26:52,054 - INFO- class_Product - Старт инициализации объекта Трава Газонная
+2025-01-22 13:26:52,054 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-22 13:26:52,054 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Газонная трава, description - Элитная трава для газона, price - 500.0, quantity-20
+2025-01-22 13:26:52,054 - INFO- class_Product - объект класса Трава Газонная инициализирован полностью
+2025-01-22 13:26:52,054 - INFO- class_Product - Старт инициализации объекта Трава Газонная
+2025-01-22 13:26:52,054 - INFO- class_Product - Начало инициации объекта класса Category
+2025-01-22 13:26:52,054 - INFO- class_Product - Завершили инициацию объекта класса Category с параметрами name - Газонная трава 2, description - Выносливая трава, price - 450.0, quantity-15
+2025-01-22 13:26:52,054 - INFO- class_Product - объект класса Трава Газонная инициализирован полностью
+2025-01-22 13:26:52,054 - INFO- class_Product - Поступил запрос по получению данных цены у Газонная трава
+2025-01-22 13:26:52,054 - INFO- class_Product - Поступил запрос по получению данных цены у Газонная трава 2
+2025-01-22 13:26:52,054 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-22 13:26:52,054 - INFO- class_Product - Сложение прошло нормально резульатат 2580000.0
+2025-01-22 13:26:52,054 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-22 13:26:52,054 - INFO- class_Product - Сложение прошло нормально резульатат 16750.0
+2025-01-22 13:26:52,054 - INFO- class_Product - Вызвана попвтка сложить два объекта класса Product 
+2025-01-22 13:26:52,054 - ERROR- class_Product - Попытка сложения завершилась ошибкой втрой объект LawnGrass
+2025-01-22 13:26:52,054 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-22 13:26:52,056 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Смартфоны, description - Высокотехнологичные смартфоны, products - [<src.product.Smartphone object at 0x0000019CC90899D0>, <src.product.Smartphone object at 0x0000019CC8CDB4D0>]
+2025-01-22 13:26:52,056 - INFO- class_Category - Начало инициации объекта класса Category
+2025-01-22 13:26:52,056 - INFO- class_Category - Завершили инициацию объекта класса Category с параметрами name - Газонная трава, description - Различные виды газонной травы, products - [<src.product.LawnGrass object at 0x0000019CC90915B0>, <src.product.LawnGrass object at 0x0000019CC9422480>]
+2025-01-22 13:26:52,056 - INFO- class_Category - Начиинаем добавлять в список продуктов
+2025-01-22 13:26:52,056 - INFO- class_Category - Продукт с наименованием Xiaomi Redmi Note 11 успешно обавлен в список к Смартфоны
+2025-01-22 13:26:52,056 - INFO- class_Category - Выводим на экран информацию о продуктах
+2025-01-22 13:26:52,056 - INFO- class_Product - вызвали на печать объект класса Product Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5
+2025-01-22 13:26:52,056 - INFO- class_Product - Поступил запрос по получению данных цены у Samsung Galaxy S23 Ultra
+2025-01-22 13:26:52,056 - INFO- class_Category - Вывели на экран: Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.
+2025-01-22 13:26:52,056 - INFO- class_Product - вызвали на печать объект класса Product Iphone 15, 210000.0 руб. Остаток: 8
+2025-01-22 13:26:52,056 - INFO- class_Product - Поступил запрос по получению данных цены у Iphone 15
+2025-01-22 13:26:52,056 - INFO- class_Category - Вывели на экран: Iphone 15, 210000.0 руб. Остаток: 8 шт.
+2025-01-22 13:26:52,056 - INFO- class_Product - вызвали на печать объект класса Product Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14
+2025-01-22 13:26:52,056 - INFO- class_Product - Поступил запрос по получению данных цены у Xiaomi Redmi Note 11
+2025-01-22 13:26:52,056 - INFO- class_Category - Вывели на экран: Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.
+2025-01-22 13:26:52,056 - INFO- class_Category - Начиинаем добавлять в список продуктов
+2025-01-22 13:26:52,056 - ERROR- class_Category - Попытка добавить продукт с наименованием завершилась ошибкой
