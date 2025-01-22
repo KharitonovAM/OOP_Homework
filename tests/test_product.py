@@ -3,7 +3,6 @@ from unittest.mock import patch
 
 import pytest
 
-from src.category import Category
 from src.product import LawnGrass, Product, Smartphone
 
 
@@ -153,5 +152,5 @@ def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
 
 
 def test_add_product_diff_classes(lawngrass_product, smartfon_product):
-    with pytest.raises(TypeError) as e:
+    with pytest.raises(TypeError):
         lawngrass_product + smartfon_product

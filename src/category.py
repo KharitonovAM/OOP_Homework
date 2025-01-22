@@ -2,7 +2,7 @@ import logging
 from typing import Any
 
 from setting.log_setting import my_log_config
-from src.product import LawnGrass, Product, Smartphone
+from src.product import Product
 
 logging.basicConfig = my_log_config
 # определяем именные логеры
@@ -59,7 +59,8 @@ class Category:
         for i in range((len(self.__products))):
             data_about_products += f"{self.__products[i]}\n"
             logging_category.info(
-                f"Вывели на экран: {self.__products[i].name}, {self.__products[i].price} руб. Остаток: {self.__products[i].quantity} шт."
+                f"Вывели на экран: {self.__products[i].name}, "
+                f"{self.__products[i].price} руб. Остаток: {self.__products[i].quantity} шт."
             )
         return data_about_products
 

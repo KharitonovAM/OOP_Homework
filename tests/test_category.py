@@ -65,7 +65,7 @@ def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
     """Проверяем. что в случае если в функцию add_product передан аргумент
     который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование"""
 
-    with pytest.raises(AttributeError):
+    with pytest.raises(TypeError):
         tv_category.add_product(wrong_data)
 
 
