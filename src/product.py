@@ -114,7 +114,15 @@ class Smartphone(Product):
 
 
 class LawnGrass(Product):
-    pass
+    def __init__(self, name: str, description: str, price: float, quantity: int, country:str, germination_period: str, color: str):
+        '''Инициализация объекта класса Smartphone'''
+
+        logging_product.info('Старт инициализации объекта Трава Газонная')
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
+        logging_product.info('объект класса Трава Газонная инициализирован полностью')
 
 
 if __name__ == '__main__':
