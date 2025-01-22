@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 import pytest
 
+from src.category import Category
 from src.product import Product
 
 
@@ -83,7 +84,7 @@ def test_new_price() -> None:
 
 
 @patch("src.product.input", side_effect=["y"])
-def test_new_price_low_0(capsys) -> None:
+def test_new_price_low_0(capsys: pytest.CaptureFixture) -> None:
     """Проверяем корректность поведения при попытке установить стоимость ниже 0"""
     my_phone = Product("product_name", "product_decription", 200000, 5)
     my_phone.price = -1500000
@@ -91,21 +92,44 @@ def test_new_price_low_0(capsys) -> None:
     assert my_priner
 
 
-#
-#
-# @patch('src.product.input', side_effect=['g','n'])
-# def test_new_price_chang_low():
-#     '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
-#
-#     my_phone = Product('product_name', 'product_decription', 200000, 5)
-#     my_phone.price = 1500
-#     assert my_phone.price == 200000
+@patch('src.product.input', side_effect=['g','n'])
+def test_new_price_chang_low(input, my_phone):
+    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+
+    my_phone.price = 1500
+    assert my_phone.price == 210000.0
 
 
 @patch("src.product.input", side_effect=["k", "y"])
-def test_new_price_chang_low2(my_phone: Product) -> None:
+def test_new_price_chang_low2(input, my_phone: Product) -> None:
     """Тест проверяет случай когда пользователь согласен изменять стоимость на болюю низкую"""
 
     z = my_phone
     z.price = 1500
     assert z.price == 1500
+
+
+def test_magic_str_by_product(my_phone: Product, capsys: pytest.CaptureFixture) -> None:
+    """Проверяем функционал, что при вызове на печать объекта класса Product получаем результат
+    который требуется в соответствии с ТЗ"""
+
+    print(my_phone)
+    test_printer = capsys.readouterr()
+    assert test_printer.out == "Iphone 15, 210000.0 руб. Остаток: 8 шт.\n"
+
+
+def test_add_by_product(my_phone: Product) -> None:
+    """Проверяем, что если сложить два объекта из класса Product
+    получим в результате сумму товаров на складе"""
+
+    test_other = Product("test_name", "test_descripion", 150000, 15)
+    assert my_phone + test_other == 8 * 210000 + 150000 * 15
+
+
+def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
+    """Проверяем что при попытке сложения двух объектов один из которых не Product
+    возбуждается исключение"""
+
+    my_phone + category_with_products
+    my_print = capsys.readouterr()
+    assert my_print.out == "Оба объекта должны быть класса Product\n"

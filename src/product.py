@@ -24,6 +24,26 @@ class Product:
             f"description - {description}, price - {price}, quantity-{quantity}"
         )
 
+    def __str__(self) -> str:
+        """Определяем правило для отображения печати объекта"""
+        logging_product.info(
+            f"вызвали на печать объект класса Product {self.name}, {self.__price} руб. Остаток: {self.quantity}"
+        )
+
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other) -> Any:
+        """Магический метод по сложению количества товара на складе"""
+
+        logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
+        try:
+            comman_price = self.quantity * self.__price + other.quantity * other.__price
+            logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
+            return comman_price
+        except:
+            logging_product.error(f"Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}")
+            print("Оба объекта должны быть класса Product")
+
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
         """принимает на вход параметры товара в словаре и возвращать созданный объект класса Product
@@ -47,30 +67,38 @@ class Product:
     @property
     def price(self) -> float:
         """Геттер для получения данных о значении параметра цена"""
-        logging_product.info(f'Поступил запрос по получению данных цены у {self.name}')
-
+        logging_product.info(f"Поступил запрос по получению данных цены у {self.name}")
         return self.__price
 
     @price.setter
     def price(self, new_price: float) -> None:
         """Устанавливает новое значение цены"""
 
-        logging_product.info(f'Начинаем устанавливать новую цену {new_price} для {self.name}, предыдущая цена {self.__price}')
+        logging_product.info(
+            f"Начинаем устанавливать новую цену {new_price} для {self.name}, предыдущая цена {self.__price}"
+        )
         if self.__price > new_price:
             user_choise = ""
             while user_choise.lower() not in ("y", "n"):
-                logging_product.info('Выполняем запрос пользователю на снижение цены')
+                logging_product.info("Выполняем запрос пользователю на снижение цены")
                 user_choise = input(
                     "\nНовая цена ниже чем предыдущая. Для подтверждение ввода сделайте выбор: "
                     "y - устанавливаем более нихку цену, n - сохранем предыдущую.\n"
                 )
-                logging_product.info(f'Получен ответ пользователя {user_choise}')
+                logging_product.info(f"Получен ответ пользователя {user_choise}")
                 if user_choise.lower() == "y":
-                    logging_product.info('Пользователь утвердил снижение цены')
+                    logging_product.info("Пользователь утвердил снижение цены")
                     self.__price = new_price
                     if new_price <= 0:
                         logging_product.info("Уведомили пользователя об отрицательной цене")
                         print("Цена не должна быть нулевая или отрицательная")
         else:
-            logging_product.info('Изменили на новую стоимость (как увеличение)')
+            logging_product.info("Изменили на новую стоимость (как увеличение)")
             self.__price = new_price
+
+
+if __name__ == '__main__':
+    my_product = Product("product_name", "product_decription", 200000, 5)
+
+    my_product.price = 10000
+    print(my_product.price)
