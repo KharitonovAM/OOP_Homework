@@ -36,13 +36,16 @@ class Product:
         """Магический метод по сложению количества товара на складе"""
 
         logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
-        try:
+
+        if isinstance(other, type(self)):
             comman_price = self.quantity * self.__price + other.quantity * other.__price
             logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
             return comman_price
-        except:
+
+        else:
             logging_product.error(f"Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}")
-            print("Оба объекта должны быть класса Product")
+            print(f"Оба объекта должны быть класса {(self.__class__.__name__)}")
+            raise TypeError(f"Оба объекта должны быть класса {(self.__class__.__name__)}")
 
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
@@ -100,7 +103,6 @@ class Product:
 class Smartphone(Product):
     '''Класс по созданию объектов Смартфон, является дочерним от класса Продукт'''
 
-
     def __init__(self, name: str, description: str, price: float, quantity: int, efficiency:float, model: str, memory: int, color: str):
         '''Инициализация объекта класса Smartphone'''
 
@@ -123,10 +125,3 @@ class LawnGrass(Product):
         self.germination_period = germination_period
         self.color = color
         logging_product.info('объект класса Трава Газонная инициализирован полностью')
-
-
-if __name__ == '__main__':
-    my_product = Product("product_name", "product_decription", 200000, 5)
-
-    my_product.price = 10000
-    print(my_product.price)

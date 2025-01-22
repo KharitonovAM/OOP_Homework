@@ -126,16 +126,6 @@ def test_add_by_product(my_phone: Product) -> None:
     assert my_phone + test_other == 8 * 210000 + 150000 * 15
 
 
-def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
-    """Проверяем что при попытке сложения двух объектов один из которых не Product
-    возбуждается исключение"""
-
-    my_phone + category_with_products
-    my_print = capsys.readouterr()
-    assert my_print.out == "Оба объекта должны быть класса Product\n"
-
-
-
 def test_creation_smartfone(smartfon_product: Smartphone) -> None:
     '''Тест проверяет что создаётся объект класса Cmartfone и что атрибуты соответствуют ожиданиям
     для тестирования применяется фикстура smartfon_product'''
@@ -163,5 +153,5 @@ def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
 
 
 def test_add_product_diff_classes(lawngrass_product, smartfon_product):
-    with pytest.raises(TypeError):
-        assert lawngrass_product + smartfon_product == 1690000.0
+    with pytest.raises(TypeError) as e:
+        lawngrass_product + smartfon_product
