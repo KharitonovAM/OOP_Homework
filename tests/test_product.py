@@ -92,19 +92,16 @@ def test_new_price_low_0(capsys: pytest.CaptureFixture) -> None:
     assert my_priner
 
 
-#
-#
-# @patch('src.product.input', side_effect=['g','n'])
-# def test_new_price_chang_low():
-#     '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
-#
-#     my_phone = Product('product_name', 'product_decription', 200000, 5)
-#     my_phone.price = 1500
-#     assert my_phone.price == 200000
+@patch('src.product.input', side_effect=['g','n'])
+def test_new_price_chang_low(input, my_phone):
+    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+
+    my_phone.price = 1500
+    assert my_phone.price == 210000.0
 
 
 @patch("src.product.input", side_effect=["k", "y"])
-def test_new_price_chang_low2(my_phone: Product) -> None:
+def test_new_price_chang_low2(input, my_phone: Product) -> None:
     """Тест проверяет случай когда пользователь согласен изменять стоимость на болюю низкую"""
 
     z = my_phone
