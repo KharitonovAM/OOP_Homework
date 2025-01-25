@@ -104,3 +104,12 @@ def test_creating_object_order(smartfon_product):
     test_object = Order(2, smartfon_product)
     assert test_object.quantity == 2
     assert test_object.total_account == 420000.0
+
+def test_adding_new_product_to_order(order_object, lawngrass_product):
+    '''Тестируем, что при вызове медода add_product, происходит замена продукта в заказе'''
+
+    test_order = order_object
+    product_name1 = order_object.order_product.name
+    test_order.add_product(lawngrass_product)
+    product_name2 = order_object.order_product.name
+    assert product_name1 != product_name2

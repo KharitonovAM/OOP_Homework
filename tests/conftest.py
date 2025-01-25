@@ -2,7 +2,7 @@ from typing import Any
 
 import pytest
 
-from src.category import Category
+from src.category import Category, Order
 from src.product import LawnGrass, Product, Smartphone
 
 
@@ -107,10 +107,15 @@ def product_dict2() -> dict[str, Any]:
 
 
 @pytest.fixture
-def smartfon_product() -> None:
+def smartfon_product() -> Smartphone:
     return Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
 
 
 @pytest.fixture
-def lawngrass_product() -> None:
+def lawngrass_product() -> LawnGrass:
     return LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
+
+
+@pytest.fixture
+def order_object() -> Order:
+    return Order(2, Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space"))
