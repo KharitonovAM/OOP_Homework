@@ -10,6 +10,7 @@ logging_product = logging.getLogger("class_Product")
 
 
 class BaseProduct(ABC):
+    """Абстрактный класс - основа для создания продуктов"""
     @abstractmethod
     def __init__(self):
         pass
@@ -28,6 +29,12 @@ class BaseProduct(ABC):
 
     @abstractmethod
     def price(self):
+        pass
+
+
+class MixinStartInfo:
+    '''Класс миксин, который ывводит на экран информацию об объекте'''
+    def __init__(self):
         pass
 
 
