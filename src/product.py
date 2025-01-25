@@ -169,7 +169,7 @@ class LawnGrass(Product):
         germination_period: str,
         color: str,
     ):
-        """Инициализация объекта класса Smartphone"""
+        """Инициализация объекта класса LawnGrass"""
 
         logging_product.info("Старт инициализации объекта Трава Газонная")
         super().__init__(name, description, price, quantity)
