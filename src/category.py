@@ -1,7 +1,7 @@
 import logging
+from abc import ABC, abstractmethod
 from typing import Any
 
-from abc import ABC, abstractmethod
 from setting.log_setting import my_log_config
 from src.product import Product
 

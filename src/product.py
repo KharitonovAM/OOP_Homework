@@ -1,6 +1,6 @@
 import logging
-from typing import Any
 from abc import ABC, abstractmethod
+from typing import Any
 
 from setting.log_setting import my_log_config
 
