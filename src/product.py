@@ -31,7 +31,7 @@ class BaseProduct(ABC):
         pass
 
 
-class Product():
+class Product(BaseProduct):
     """Класс по созданию объектов Продукт"""
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
