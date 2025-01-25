@@ -21,7 +21,19 @@ class abstract_structure(ABC):
          pass
 
 class Order(abstract_structure):
-    pass
+
+    def __init__(self, quantity, order_product):
+        '''инициализация объекта класса Order'''
+
+        self.quantity = quantity
+        self.order_product = order_product
+        self.total_account = quantity * order_product.price
+
+    def __str__(self):
+        pass
+
+    def add_product(self):
+        pass
 
 class Category(abstract_structure):
     """Класс по созданию объектов Category"""

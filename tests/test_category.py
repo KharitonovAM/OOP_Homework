@@ -103,4 +103,4 @@ def test_creating_object_order(smartfon_product):
 
     test_object = Order(2, smartfon_product)
     assert test_object.quantity == 2
-    assert test_object.total_account = 420000.0
+    assert test_object.total_account == 420000.0
