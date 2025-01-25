@@ -20,7 +20,10 @@ class abstract_structure(ABC):
      def add_product(self):
          pass
 
-class Category:
+class Order(abstract_structure):
+    pass
+
+class Category(abstract_structure):
     """Класс по созданию объектов Category"""
 
     product_count = 0
