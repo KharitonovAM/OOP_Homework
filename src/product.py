@@ -13,19 +13,19 @@ class BaseProduct(ABC):
     """Абстрактный класс - основа для создания продуктов"""
 
     @abstractmethod
-    def __str__(self):
+    def __str__(self) -> None:
         pass
 
     @abstractmethod
-    def __add__(self, other):
+    def __add__(self, other: Any) -> None:
         pass
 
     @abstractmethod
-    def new_product(self):
+    def new_product(self) -> None:
         pass
 
     @abstractmethod
-    def price(self):
+    def price(self) -> None:
         pass
 
 

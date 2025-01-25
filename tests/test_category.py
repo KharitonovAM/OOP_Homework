@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 
 from src.category import Category, Order
-from src.product import Product
+from src.product import Product, LawnGrass
 
 
 def test_make_object_category(phone_category: Category) -> None:
@@ -88,7 +88,7 @@ def test_str_class_category(category_with_products: Category, capsys: pytest.Cap
     assert test_print.out == "Смартфоны, количество продуктов: 19 шт.\n"
 
 
-def test_try_add_wrong_category(category_with_products) -> None:
+def test_try_add_wrong_category(category_with_products: Category) -> None:
     """Тестируем, что при попытке добавить в объект класса категории объект,
     которые не является классом Продукт или его дочерним классаом, вызывается ошибка"""
 
@@ -98,7 +98,7 @@ def test_try_add_wrong_category(category_with_products) -> None:
         )
 
 
-def test_creating_object_order(smartfon_product) -> None:
+def test_creating_object_order(smartfon_product: Product) -> None:
     """Тестируем, что функционал по созданию объекта
     выполняется в соответствии с ТЗ"""
 
@@ -107,7 +107,7 @@ def test_creating_object_order(smartfon_product) -> None:
     assert test_object.total_account == 420000.0
 
 
-def test_adding_new_product_to_order(order_object, lawngrass_product) -> None:
+def test_adding_new_product_to_order(order_object: Order, lawngrass_product: LawnGrass) -> None:
     """Тестируем, что при вызове медода add_product, происходит замена продукта в заказе"""
 
     test_order = order_object
@@ -117,7 +117,7 @@ def test_adding_new_product_to_order(order_object, lawngrass_product) -> None:
     assert product_name1 != product_name2
 
 
-def test_str_order(order_object, capsys) -> None:
+def test_str_order(order_object: Order, capsys) -> None:
     """В ходе теста проверяем, что при вызыве на печать объекта класса Order
     возвращается информация в соответствии с ТЗ"""
     print(order_object)
@@ -125,7 +125,7 @@ def test_str_order(order_object, capsys) -> None:
     assert test_printing.out == "В заказе Iphone 15 в количестве 2 шт на общую сумму 420000.0\n"
 
 
-def test_order_recalculate_the_cost(order_object, lawngrass_product) -> None:
+def test_order_recalculate_the_cost(order_object: Order, lawngrass_product: LawnGrass) -> None:
     """Тестируем выполнение функционала метода. который позволяет пользователю принудительно пересчитать
     общую стоимость покупки"""
 
