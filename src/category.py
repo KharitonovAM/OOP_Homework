@@ -9,7 +9,7 @@ logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_category = logging.getLogger("class_Category")
 
- class abstract_structure(ABC):
+class abstract_structure(ABC):
      '''Абстрактный класс для создания классов для работы с продуктами'''
 
      @abstractmethod
