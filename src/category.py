@@ -26,7 +26,7 @@ class Category:
         Category.category_count += 1
         logging_category.info(
             f"Завершили инициацию объекта класса Category с параметрами name - "
-            f"{name}, description - {description}, products - {products}"
+            f"{name}, description - {description}"
         )
 
     def __str__(self) -> str:
