@@ -1,6 +1,7 @@
 import logging
 from typing import Any
 
+from abc import ABC, abstractmethod
 from setting.log_setting import my_log_config
 from src.product import Product
 
@@ -8,6 +9,16 @@ logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_category = logging.getLogger("class_Category")
 
+ class abstract_structure(ABC):
+     '''Абстрактный класс для создания классов для работы с продуктами'''
+
+     @abstractmethod
+     def __str__(self):
+         pass
+
+     @abstractmethod
+     def add_product(self):
+         pass
 
 class Category:
     """Класс по созданию объектов Category"""
