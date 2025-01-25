@@ -3,8 +3,7 @@ from unittest.mock import patch
 
 import pytest
 
-from src.category import Category
-from src.product import Product
+from src.product import LawnGrass, Product, Smartphone
 
 
 def test_making_object_Product(my_phone: Product) -> None:
@@ -92,9 +91,9 @@ def test_new_price_low_0(capsys: pytest.CaptureFixture) -> None:
     assert my_priner
 
 
-@patch('src.product.input', side_effect=['g','n'])
+@patch("src.product.input", side_effect=["g", "n"])
 def test_new_price_chang_low(input, my_phone):
-    '''Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую'''
+    """Тест проверяет случай когда пользователь несогласен изменять стоимость на болюю низкую"""
 
     my_phone.price = 1500
     assert my_phone.price == 210000.0
@@ -126,10 +125,32 @@ def test_add_by_product(my_phone: Product) -> None:
     assert my_phone + test_other == 8 * 210000 + 150000 * 15
 
 
-def test_add_by_product_wrong_class(my_phone: Product, category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
-    """Проверяем что при попытке сложения двух объектов один из которых не Product
-    возбуждается исключение"""
+def test_creation_smartfone(smartfon_product: Smartphone) -> None:
+    """Тест проверяет что создаётся объект класса Cmartfone и что атрибуты соответствуют ожиданиям
+    для тестирования применяется фикстура smartfon_product"""
 
-    my_phone + category_with_products
-    my_print = capsys.readouterr()
-    assert my_print.out == "Оба объекта должны быть класса Product\n"
+    assert smartfon_product.name == "Iphone 15"
+    assert smartfon_product.description == "512GB, Gray space"
+    assert smartfon_product.price == 210000.0
+    assert smartfon_product.quantity == 8
+    assert smartfon_product.efficiency == 98.2
+    assert smartfon_product.model == "15"
+    assert smartfon_product.memory == 512
+    assert smartfon_product.color == "Gray space"
+
+
+def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
+    """Тест проверяет. что созданный объект класса LawnGrass соответствует ТЗ"""
+
+    assert lawngrass_product.name == "Газонная трава"
+    assert lawngrass_product.description == "Элитная трава для газона"
+    assert lawngrass_product.price == 500.0
+    assert lawngrass_product.quantity == 20
+    assert lawngrass_product.country == "Россия"
+    assert lawngrass_product.germination_period == "7 дней"
+    assert lawngrass_product.color == "Зеленый"
+
+
+def test_add_product_diff_classes(lawngrass_product, smartfon_product):
+    with pytest.raises(TypeError):
+        lawngrass_product + smartfon_product

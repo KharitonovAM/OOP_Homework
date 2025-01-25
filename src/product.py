@@ -36,13 +36,16 @@ class Product:
         """Магический метод по сложению количества товара на складе"""
 
         logging_product.info("Вызвана попвтка сложить два объекта класса Product ")
-        try:
+
+        if isinstance(other, type(self)):
             comman_price = self.quantity * self.__price + other.quantity * other.__price
             logging_product.info(f"Сложение прошло нормально резульатат {comman_price}")
             return comman_price
-        except:
+
+        else:
             logging_product.error(f"Попытка сложения завершилась ошибкой втрой объект {other.__class__.__name__}")
-            print("Оба объекта должны быть класса Product")
+            print(f"Оба объекта должны быть класса {(self.__class__.__name__)}")
+            raise TypeError(f"Оба объекта должны быть класса {(self.__class__.__name__)}")
 
     @classmethod
     def new_product(cls, insert_dict: dict[Any, Any], insert_list: list = []):
@@ -97,8 +100,47 @@ class Product:
             self.__price = new_price
 
 
-if __name__ == '__main__':
-    my_product = Product("product_name", "product_decription", 200000, 5)
+class Smartphone(Product):
+    """Класс по созданию объектов Смартфон, является дочерним от класса Продукт"""
 
-    my_product.price = 10000
-    print(my_product.price)
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: float,
+        model: str,
+        memory: int,
+        color: str,
+    ):
+        """Инициализация объекта класса Smartphone"""
+
+        logging_product.info("Старт инициализации объекта смартфон")
+        super().__init__(name, description, price, quantity)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
+        logging_product.info("объект класса смартфон инициализирован полностью")
+
+
+class LawnGrass(Product):
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
+    ):
+        """Инициализация объекта класса Smartphone"""
+
+        logging_product.info("Старт инициализации объекта Трава Газонная")
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
+        logging_product.info("объект класса Трава Газонная инициализирован полностью")
