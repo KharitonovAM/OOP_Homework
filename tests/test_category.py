@@ -113,3 +113,11 @@ def test_adding_new_product_to_order(order_object, lawngrass_product):
     test_order.add_product(lawngrass_product)
     product_name2 = order_object.order_product.name
     assert product_name1 != product_name2
+
+
+def test_str_order(order_object, capsys):
+    '''В ходе теста проверяем, что при вызыве на печать объекта класса Order
+    возвращается информация в соответствии с ТЗ'''
+    test_printing = print(order_object)
+    capsys.readouterr()
+    assert test_printing.out == 'В заказе Iphone 15 в количестве 2 шт на общую сумму 420000.0\n'
