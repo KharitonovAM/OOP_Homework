@@ -32,7 +32,9 @@ class Order(abstract_structure):
     def __str__(self):
         pass
 
-    def add_product(self):
+    def add_product(self, new_producr):
+        """Добавляет новый продукт в заказ, заменяя текущий на новый"""
+
         pass
 
 class Category(abstract_structure):
