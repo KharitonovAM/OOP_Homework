@@ -1,5 +1,6 @@
 import logging
 from typing import Any
+from abc import ABC, abstractmethod
 
 from setting.log_setting import my_log_config
 
@@ -8,7 +9,29 @@ logging.basicConfig = my_log_config
 logging_product = logging.getLogger("class_Product")
 
 
-class Product:
+class BaseProduct(ABC):
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+    @abstractmethod
+    def __add__(self, other):
+        pass
+
+    @abstractmethod
+    def new_product(self):
+        pass
+
+    @abstractmethod
+    def price(self):
+        pass
+
+
+class Product():
     """Класс по созданию объектов Продукт"""
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
