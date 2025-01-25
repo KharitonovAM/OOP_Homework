@@ -32,7 +32,7 @@ class Order(abstract_structure):
         logging_category.info('Завершена инициализации объекта категории Order')
 
     def __str__(self):
-        pass
+        return f'В заказе {self.order_product.name} в количестве {self.quantity} шт на общую сумму {self.total_account}'
 
     def add_product(self, new_producr):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
