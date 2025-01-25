@@ -2,7 +2,7 @@ from typing import Any
 
 import pytest
 
-from src.category import Category
+from src.category import Category, Order
 from src.product import Product
 
 
@@ -96,3 +96,11 @@ def test_try_add_wrong_category(category_with_products) -> None:
         category_with_products.add_product(
             Category("new_category", "test_category", ["test_category", "test_category", "test_category"])
         )
+
+def test_creating_object_order(smartfon_product):
+    '''Тестируем, что функционал по созданию объекта
+    выполняется в соответствии с ТЗ'''
+
+    test_object = Order(2, smartfon_product)
+    assert test_object.quantity == 2
+    assert test_object.total_account = 420000.0
