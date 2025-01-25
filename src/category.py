@@ -35,7 +35,8 @@ class Order(abstract_structure):
     def add_product(self, new_producr):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
 
-        pass
+        self.order_product = new_producr
+
 
 class Category(abstract_structure):
     """Класс по созданию объектов Category"""
