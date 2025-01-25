@@ -163,3 +163,13 @@ def test_mixin_product(capsys):
     test_product = Product("тестовый продукт", "Тестовое описание", 10000, 5)
     test_printing = capsys.readouterr()
     assert test_printing.out == 'Product(тестовый продукт, Тестовое описание, 10000, 5)\n'
+
+
+def test_mixim_LawnGrass_class(capsys):
+    '''Тестируем, что при созании объекта класса LawnGrass
+     печатат в консоль информацию о том,
+     от какого класса и с какими параметрами был создан объект'''
+
+    test_product = LawnGrass("тестовый продукт", "Тестовое описание", 10000, 5, "Россия", "год", "серо-буро-малиновый")
+    test_printing = capsys.readouterr()
+    assert test_printing.out == 'LawnGrass(тестовый продукт, Тестовое описание, 10000, 5)\n'
