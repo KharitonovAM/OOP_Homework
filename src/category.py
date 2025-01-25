@@ -9,45 +9,48 @@ logging.basicConfig = my_log_config
 # определяем именные логеры
 logging_category = logging.getLogger("class_Category")
 
+
 class abstract_structure(ABC):
-     '''Абстрактный класс для создания классов для работы с продуктами'''
+    """Абстрактный класс для создания классов для работы с продуктами"""
 
-     @abstractmethod
-     def __str__(self):
-         pass
+    @abstractmethod
+    def __str__(self):
+        pass
 
-     @abstractmethod
-     def add_product(self):
-         pass
+    @abstractmethod
+    def add_product(self):
+        pass
+
 
 class Order(abstract_structure):
 
     def __init__(self, quantity, order_product):
-        '''инициализация объекта класса Order'''
+        """инициализация объекта класса Order"""
 
-        logging_category.info('Старт инициализации объекта категории Order')
+        logging_category.info("Старт инициализации объекта категории Order")
         self.quantity = quantity
         self.order_product = order_product
         self.total_account = quantity * order_product.price
-        logging_category.info('Завершена инициализации объекта категории Order')
+        logging_category.info("Завершена инициализации объекта категории Order")
 
     def __str__(self):
-        return f'В заказе {self.order_product.name} в количестве {self.quantity} шт на общую сумму {self.total_account}'
+        return (
+            f"В заказе {self.order_product.name} в количестве {self.quantity} шт на общую сумму {self.total_account}"
+        )
 
     def add_product(self, new_producr):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
 
-        logging_category.info('Пытаемся заменить продукт в заказе')
+        logging_category.info("Пытаемся заменить продукт в заказе")
         self.order_product = new_producr
-        logging_category.info('Продукт в заказе заменён')
-
+        logging_category.info("Продукт в заказе заменён")
 
     def recalculate_the_cost(self):
-        '''Метод который позволляет принудительно пересчитать общую стоимость заказа'''
+        """Метод который позволляет принудительно пересчитать общую стоимость заказа"""
 
-        logging_category.info(f'Вызван метод по замене текущей суммы счета {self.total_account} на новую')
+        logging_category.info(f"Вызван метод по замене текущей суммы счета {self.total_account} на новую")
         self.total_account = self.quantity * self.order_product.price
-        logging_category.info(f'Новая сумма счета {self.total_account}')
+        logging_category.info(f"Новая сумма счета {self.total_account}")
 
 
 class Category(abstract_structure):
@@ -66,8 +69,7 @@ class Category(abstract_structure):
         Category.product_count += len(products)
         Category.category_count += 1
         logging_category.info(
-            f"Завершили инициацию объекта класса Category с параметрами name - "
-            f"{name}, description - {description}"
+            f"Завершили инициацию объекта класса Category с параметрами name - " f"{name}, description - {description}"
         )
 
     def __str__(self) -> str:

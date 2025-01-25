@@ -30,12 +30,14 @@ class BaseProduct(ABC):
 
 
 class MixinStartInfo:
-    '''Класс миксин, который ывводит на экран информацию об объекте'''
+    """Класс миксин, который ывводит на экран информацию об объекте"""
+
     def __init__(self):
         super().__init__()
         self.__repr__()
+
     def __repr__(self):
-        print(f'{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})')
+        print(f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})")
 
 
 class Product(BaseProduct, MixinStartInfo):

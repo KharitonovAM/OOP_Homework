@@ -97,16 +97,18 @@ def test_try_add_wrong_category(category_with_products) -> None:
             Category("new_category", "test_category", ["test_category", "test_category", "test_category"])
         )
 
+
 def test_creating_object_order(smartfon_product) -> None:
-    '''Тестируем, что функционал по созданию объекта
-    выполняется в соответствии с ТЗ'''
+    """Тестируем, что функционал по созданию объекта
+    выполняется в соответствии с ТЗ"""
 
     test_object = Order(2, smartfon_product)
     assert test_object.quantity == 2
     assert test_object.total_account == 420000.0
 
+
 def test_adding_new_product_to_order(order_object, lawngrass_product) -> None:
-    '''Тестируем, что при вызове медода add_product, происходит замена продукта в заказе'''
+    """Тестируем, что при вызове медода add_product, происходит замена продукта в заказе"""
 
     test_order = order_object
     product_name1 = order_object.order_product.name
@@ -116,16 +118,16 @@ def test_adding_new_product_to_order(order_object, lawngrass_product) -> None:
 
 
 def test_str_order(order_object, capsys) -> None:
-    '''В ходе теста проверяем, что при вызыве на печать объекта класса Order
-    возвращается информация в соответствии с ТЗ'''
+    """В ходе теста проверяем, что при вызыве на печать объекта класса Order
+    возвращается информация в соответствии с ТЗ"""
     print(order_object)
     test_printing = capsys.readouterr()
-    assert test_printing.out == 'В заказе Iphone 15 в количестве 2 шт на общую сумму 420000.0\n'
+    assert test_printing.out == "В заказе Iphone 15 в количестве 2 шт на общую сумму 420000.0\n"
 
 
 def test_order_recalculate_the_cost(order_object, lawngrass_product) -> None:
     """Тестируем выполнение функционала метода. который позволяет пользователю принудительно пересчитать
-     общую стоимость покупки"""
+    общую стоимость покупки"""
 
     test_order = order_object
     test_order.add_product(lawngrass_product)
