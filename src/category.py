@@ -25,9 +25,11 @@ class Order(abstract_structure):
     def __init__(self, quantity, order_product):
         '''инициализация объекта класса Order'''
 
+        logging_category.info('Старт инициализации объекта категории Order')
         self.quantity = quantity
         self.order_product = order_product
         self.total_account = quantity * order_product.price
+        logging_category.info('Завершена инициализации объекта категории Order')
 
     def __str__(self):
         pass
@@ -35,7 +37,9 @@ class Order(abstract_structure):
     def add_product(self, new_producr):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
 
+        logging_category.info('Пытаемся заменить продукт в заказе')
         self.order_product = new_producr
+        logging_category.info('Продукт в заказе заменён')
 
 
 class Category(abstract_structure):
