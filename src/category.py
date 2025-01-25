@@ -42,6 +42,14 @@ class Order(abstract_structure):
         logging_category.info('Продукт в заказе заменён')
 
 
+    def recalculate_the_cost(self):
+        '''Метод который позволляет принудительно пересчитать общую стоимость заказа'''
+
+        logging_category.info(f'Вызван метод по замене текущей суммы счета {self.total_account} на новую')
+        self.total_account = self.quantity * self.order_product.price
+        logging_category.info(f'Новая сумма счета {self.total_account}')
+
+
 class Category(abstract_structure):
     """Класс по созданию объектов Category"""
 
