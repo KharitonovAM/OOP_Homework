@@ -154,3 +154,12 @@ def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
 def test_add_product_diff_classes(lawngrass_product, smartfon_product):
     with pytest.raises(TypeError):
         lawngrass_product + smartfon_product
+
+def test_mixin_product(capsys):
+    '''Тестируем, что при созании объекта класса product
+     или дочерних классов печатат в консоль информацию о том,
+     от какого класса и с какими параметрами был создан объект'''
+
+    test_product = Product("тестовый продукт", "Тестовое описание", 10000, 5)
+    test_printing = capsys.readouterr()
+    assert test_printing.out == 'Product("тестовый продукт", "Тестовое описание", 10000, 5)\n'
