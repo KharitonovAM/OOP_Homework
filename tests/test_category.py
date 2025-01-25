@@ -65,7 +65,7 @@ def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
     """Проверяем. что в случае если в функцию add_product передан аргумент
     который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование"""
 
-    with pytest.raises(AttributeError):
+    with pytest.raises(TypeError):
         tv_category.add_product(wrong_data)
 
 
@@ -74,11 +74,9 @@ def test_products(category_with_products: Category, capsys: pytest.CaptureFixtur
 
     print(category_with_products.products)
     captured = capsys.readouterr()
-    assert (
-        captured.out
-        == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
- 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n'
- '\n'))
+    assert captured.out == (
+        "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n" "айфон 14, 70000.0 руб. Остаток: 14 шт.\n" "\n"
+    )
 
 
 def test_str_class_category(category_with_products: Category, capsys: pytest.CaptureFixture) -> None:
@@ -88,3 +86,13 @@ def test_str_class_category(category_with_products: Category, capsys: pytest.Cap
     print(category_with_products)
     test_print = capsys.readouterr()
     assert test_print.out == "Смартфоны, количество продуктов: 19 шт.\n"
+
+
+def test_try_add_wrong_category(category_with_products) -> None:
+    """Тестируем, что при попытке добавить в объект класса категории объект,
+    которые не является классом Продукт или его дочерним классаом, вызывается ошибка"""
+
+    with pytest.raises(TypeError):
+        category_with_products.add_product(
+            Category("new_category", "test_category", ["test_category", "test_category", "test_category"])
+        )

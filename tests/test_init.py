@@ -2,7 +2,7 @@ import json
 import os
 from typing import Any
 
-from src.init import make_object_from_dict, take_data_from_json, ProductIter
+from src.init import ProductIter, make_object_from_dict, take_data_from_json
 
 
 def test_take_data_from_json(my_dict: dict[Any, Any]) -> None:
@@ -31,5 +31,6 @@ def test_product_iter(category_with_products, capsys):
     for item in test_iter:
         print(item)
     my_printer = capsys.readouterr()
-    assert my_printer.out == ('Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n'
- 'айфон 14, 70000.0 руб. Остаток: 14 шт.\n')
+    assert my_printer.out == (
+        "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.\n" "айфон 14, 70000.0 руб. Остаток: 14 шт.\n"
+    )
