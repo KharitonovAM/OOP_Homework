@@ -162,4 +162,4 @@ def test_mixin_product(capsys):
 
     test_product = Product("тестовый продукт", "Тестовое описание", 10000, 5)
     test_printing = capsys.readouterr()
-    assert test_printing.out == 'Product("тестовый продукт", "Тестовое описание", 10000, 5)\n'
+    assert test_printing.out == 'Product(тестовый продукт, Тестовое описание, 10000, 5)\n'

@@ -11,9 +11,6 @@ logging_product = logging.getLogger("class_Product")
 
 class BaseProduct(ABC):
     """Абстрактный класс - основа для создания продуктов"""
-    @abstractmethod
-    def __init__(self):
-        pass
 
     @abstractmethod
     def __str__(self):
@@ -35,10 +32,13 @@ class BaseProduct(ABC):
 class MixinStartInfo:
     '''Класс миксин, который ывводит на экран информацию об объекте'''
     def __init__(self):
-        pass
+        super().__init__()
+        self.__repr__()
+    def __repr__(self):
+        print(f'{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})')
 
 
-class Product(BaseProduct):
+class Product(BaseProduct, MixinStartInfo):
     """Класс по созданию объектов Продукт"""
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
@@ -49,6 +49,7 @@ class Product(BaseProduct):
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
         logging_product.info(
             f"Завершили инициацию объекта класса Category с параметрами name - {name}, "
             f"description - {description}, price - {price}, quantity-{quantity}"
