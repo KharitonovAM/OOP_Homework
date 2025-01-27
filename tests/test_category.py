@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 
 from src.category import Category, Order
-from src.product import Product, LawnGrass
+from src.product import LawnGrass, Product
 from src.raises import ZeroQuantityError
 
 
