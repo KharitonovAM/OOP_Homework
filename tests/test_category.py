@@ -163,7 +163,7 @@ def test_add_product_to_order_zero_quantity(order_object, product_with_zero_quan
     assert test_print.out == "Пытались добавить продукт с количеством 0\nобработка добавления товара завершена\n"
 
 
-def test_add_product_to_order_zero_quantity(order_object, smartfon_product, capsys) -> None:
+def test_add_product_to_order_nonzero_quantity(order_object, smartfon_product, capsys) -> None:
     """Тест проверяет что добавлении в заказ продукта с 0 количеством будет отрабатывать исключение"""
 
     order_object.add_product(smartfon_product)
@@ -179,8 +179,9 @@ def test_add_product_to_category_zero_quantity(category_with_products, product_w
     assert test_print.out == "Пытались добавить продукт с количеством 0\nобработка добавления товара завершена\n"
 
 
-def test_add_product_to_category_zero_quantity(category_with_products, smartfon_product, capsys) -> None:
-    """Тест проверяет что добавлении в заказ нового продукта с количеством отличным от нуля не будет отрабатывать исключение"""
+def test_add_product_to_category_nonzero_quantity(category_with_products, smartfon_product, capsys) -> None:
+    """Тест проверяет что добавлении в заказ нового продукта с количеством
+     отличным от нуля не будет отрабатывать исключение"""
 
     category_with_products.add_product(smartfon_product)
     test_print = capsys.readouterr()
