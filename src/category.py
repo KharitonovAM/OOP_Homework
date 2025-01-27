@@ -4,6 +4,7 @@ from typing import Any
 
 from setting.log_setting import my_log_config
 from src.product import Product
+from src.raises import ZeroQuantityError
 
 logging.basicConfig = my_log_config
 # определяем именные логеры
@@ -29,6 +30,8 @@ class Order(abstract_structure):
 
         logging_category.info("Старт инициализации объекта категории Order")
         self.quantity = quantity
+        if self.quantity ==0:
+            raise ZeroQuantityError
         self.order_product = order_product
         self.total_account = quantity * order_product.price
         logging_category.info("Завершена инициализации объекта категории Order")
