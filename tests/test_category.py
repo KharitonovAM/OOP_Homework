@@ -133,3 +133,9 @@ def test_order_recalculate_the_cost(order_object: Order, lawngrass_product: Lawn
     test_order.add_product(lawngrass_product)
     test_order.recalculate_the_cost()
     assert test_order.total_account == 1000.0
+
+
+def test_get_avg_price(category_with_products) -> None:
+    '''Проверяем что возвращает метод get_avg_price возвращает среднюю цену товаров в категории'''
+
+    category_with_products.get_avg_price == 125000
