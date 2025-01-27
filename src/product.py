@@ -47,6 +47,9 @@ class Product(BaseProduct, MixinStartInfo):
         """Инициализация объекта класса Product"""
 
         logging_product.info("Начало инициации объекта класса Category")
+        if quantity == 0:
+            logging_product.error('Попытка создать объект класса Product с количеством 0, возуждена ошибка ValueError')
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         self.name = name
         self.description = description
         self.__price = price
