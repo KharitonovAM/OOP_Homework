@@ -145,3 +145,9 @@ def test_get_avg_price_without_products(category_without_products) -> None:
     '''Тест проверяет, что метод get_avg_price возвращает 0, если в список товаров пустой'''
 
     assert category_without_products.get_avg_price() == 0
+
+
+def test_to_order_with_zero_quantity(smartfon_product):
+    with pytest.raises(ZeroQuantityError):
+        Order(0, smartfon_product)
+
