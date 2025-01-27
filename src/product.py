@@ -37,7 +37,7 @@ class MixinStartInfo:
         print(repr(self))
 
     def __repr__(self):
-        return (f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})")
+        return f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})"
 
 
 class Product(BaseProduct, MixinStartInfo):
@@ -48,8 +48,8 @@ class Product(BaseProduct, MixinStartInfo):
 
         logging_product.info("Начало инициации объекта класса Category")
         if quantity == 0:
-            logging_product.error('Попытка создать объект класса Product с количеством 0, возуждена ошибка ValueError')
-            raise ValueError('Товар с нулевым количеством не может быть добавлен')
+            logging_product.error("Попытка создать объект класса Product с количеством 0, возуждена ошибка ValueError")
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.name = name
         self.description = description
         self.__price = price

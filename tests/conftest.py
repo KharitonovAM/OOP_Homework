@@ -47,8 +47,7 @@ def clear_cash() -> None:
 def my_dict() -> dict[Any, Any]:
     return {
         "name": "Телевизоры",
-        "description":
-            "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+        "description": "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         "list_categ": ["kat1", "kat2", "kat3"],
     }
 
@@ -72,8 +71,7 @@ def dict_for_json() -> list[dict[Any, Any]]:
         },
         {
             "name": "Телевизоры",
-            "description":
-                "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+            "description": "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
             "products": [
                 {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}
             ],
@@ -129,7 +127,6 @@ def category_without_products() -> Category:
 
 @pytest.fixture
 def product_with_zero_quantity() -> Product:
-    test_product = Product('test_name','test_dexcription', 10000.15,10)
+    test_product = Product("test_name", "test_dexcription", 10000.15, 10)
     test_product.quantity = 0
     return test_product
-

@@ -100,10 +100,10 @@ def test_new_price_chang_low(input, my_phone):
 
 
 def test_creating_product_with_0_count():
-    '''Тестируем, что при созданиии продукта с нулевым количеством возбуждается ошибка'''
+    """Тестируем, что при созданиии продукта с нулевым количеством возбуждается ошибка"""
 
     with pytest.raises(ValueError):
-        Product('test_name', 'test_description', 101, 0)
+        Product("test_name", "test_description", 101, 0)
 
 
 @patch("src.product.input", side_effect=["k", "y"])
