@@ -151,6 +151,26 @@ def test_creation_lawngrass(lawngrass_product: LawnGrass) -> None:
     assert lawngrass_product.color == "Зеленый"
 
 
-def test_add_product_diff_classes(lawngrass_product, smartfon_product):
+def test_add_product_diff_classes(lawngrass_product, smartfon_product) -> None:
     with pytest.raises(TypeError):
         lawngrass_product + smartfon_product
+
+
+def test_mixin_product(capsys) -> None:
+    """Тестируем, что при созании объекта класса product
+    или дочерних классов печатат в консоль информацию о том,
+    от какого класса и с какими параметрами был создан объект"""
+
+    Product("тестовый продукт", "Тестовое описание", 10000, 5)
+    test_printing = capsys.readouterr()
+    assert test_printing.out == "Product(тестовый продукт, Тестовое описание, 10000, 5)\n"
+
+
+def test_mixim_LawnGrass_class(capsys) -> None:
+    """Тестируем, что при созании объекта класса LawnGrass
+    печатат в консоль информацию о том,
+    от какого класса и с какими параметрами был создан объект"""
+
+    LawnGrass("тестовый продукт", "Тестовое описание", 10000, 5, "Россия", "год", "серо-буро-малиновый")
+    test_printing = capsys.readouterr()
+    assert test_printing.out == "LawnGrass(тестовый продукт, Тестовое описание, 10000, 5)\n"
