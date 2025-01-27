@@ -114,5 +114,8 @@ class Category(abstract_structure):
     def get_avg_price(self) -> float:
         '''Метод который возвращает зачение средний цены для всех товаров в категории'''
 
-        avg_price = sum([x.price for x in self.__products])/len(self.__products)
+        try:
+            avg_price = sum([x.price for x in self.__products])/len(self.__products)
+        except ZeroDivisionError:
+            avg_price = 0.0
         return avg_price
