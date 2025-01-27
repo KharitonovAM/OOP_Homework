@@ -101,13 +101,24 @@ class Category(abstract_structure):
     def add_product(self, new_product: Any) -> None:
         """Добавляет новый объект класса Product в список продуктов"""
         logging_category.info("Начиинаем добавлять в список продуктов")
-        if issubclass(type(new_product), Product):
-            Category.product_count += 1
-            self.__products.append(new_product)
-            logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
+        try:
+            if new_product.quantity == 0:
+                raise ZeroQuantityError
+            if issubclass(type(new_product), Product):
+                Category.product_count += 1
+                self.__products.append(new_product)
+                logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
+            else:
+                logging_category.error("Попытка добавить продукт с наименованием завершилась ошибкой")
+                raise TypeError
+        except ZeroQuantityError as e:
+            logging_category.error(f'При попытке добавить продукт возникла ошибка {e}')
+            print(e)
         else:
-            logging_category.error("Попытка добавить продукт с наименованием завершилась ошибкой")
-            raise TypeError
+            logging_category.info("В категорию добавлен еще один продукт")
+            print(f'{new_product.name} добавлен')
+        finally:
+            print('обработка добавления товара завершена')
 
     @property
     def products(self) -> None:

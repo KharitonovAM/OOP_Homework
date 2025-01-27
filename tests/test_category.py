@@ -66,7 +66,7 @@ def test_wrong_type_of_adding(tv_category: Category, wrong_data: Any) -> None:
     """Проверяем. что в случае если в функцию add_product передан аргумент
     который не относиться к классу продукты. будет возникать ошибка при попытке выполнить логирование"""
 
-    with pytest.raises(TypeError):
+    with pytest.raises(AttributeError):
         tv_category.add_product(wrong_data)
 
 
@@ -93,7 +93,7 @@ def test_try_add_wrong_category(category_with_products: Category) -> None:
     """Тестируем, что при попытке добавить в объект класса категории объект,
     которые не является классом Продукт или его дочерним классаом, вызывается ошибка"""
 
-    with pytest.raises(TypeError):
+    with pytest.raises(AttributeError):
         category_with_products.add_product(
             Category("new_category", "test_category", ["test_category", "test_category", "test_category"])
         )
@@ -148,24 +148,40 @@ def test_get_avg_price_without_products(category_without_products) -> None:
     assert category_without_products.get_avg_price() == 0
 
 
-def test_to_order_with_zero_quantity(smartfon_product):
+def test_to_order_with_zero_quantity(smartfon_product)-> None:
     '''Тест проверяет что при попытке создания заказа с 0 количеством будет возбуждаться исключение'''
 
     with pytest.raises(ZeroQuantityError):
         Order(0, smartfon_product)
 
 
-def test_add_product_to_order_zero_quantity(order_object, product_with_zero_quantity, capsys):
+def test_add_product_to_order_zero_quantity(order_object, product_with_zero_quantity, capsys)-> None:
     """Тест проверяет что добавлении в заказ продукта с 0 количеством будет отрабатывать исключение"""
 
     order_object.add_product(product_with_zero_quantity)
     test_print = capsys.readouterr()
-    assert test_print.out == 'Добавлен продукт с количеством 0\nобработка добавления товара завершена\n'
+    assert test_print.out == 'Пытались добавить продукт с количеством 0\nобработка добавления товара завершена\n'
 
 
-def test_add_product_to_order_zero_quantity(order_object, smartfon_product, capsys):
+def test_add_product_to_order_zero_quantity(order_object, smartfon_product, capsys)-> None:
     """Тест проверяет что добавлении в заказ продукта с 0 количеством будет отрабатывать исключение"""
 
     order_object.add_product(smartfon_product)
+    test_print = capsys.readouterr()
+    assert test_print.out == 'Iphone 15 добавлен\nобработка добавления товара завершена\n'
+
+
+def test_add_product_to_category_zero_quantity(category_with_products, product_with_zero_quantity, capsys) -> None:
+    """Тест проверяет что добавлении в категорию нового продукта с 0 количеством будет отрабатывать исключение"""
+
+    category_with_products.add_product(product_with_zero_quantity)
+    test_print = capsys.readouterr()
+    assert test_print.out == 'Пытались добавить продукт с количеством 0\nобработка добавления товара завершена\n'
+
+
+def test_add_product_to_category_zero_quantity(category_with_products, smartfon_product, capsys)-> None:
+    """Тест проверяет что добавлении в заказ нового продукта с количеством отличным от нуля не будет отрабатывать исключение"""
+
+    category_with_products.add_product(smartfon_product)
     test_print = capsys.readouterr()
     assert test_print.out == 'Iphone 15 добавлен\nобработка добавления товара завершена\n'
