@@ -110,3 +110,9 @@ class Category(abstract_structure):
     def product_list(self) -> list[Product]:
         """Функция которая позволяет получиь список продуктов"""
         return self.__products
+
+    def get_avg_price(self) -> float:
+        '''Метод который возвращает зачение средний цены для всех товаров в категории'''
+
+        avg_price = sum([x.price for x in self.__products])/len(self.__products)
+        return avg_price
