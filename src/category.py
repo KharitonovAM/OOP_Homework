@@ -51,13 +51,15 @@ class Order(abstract_structure):
             else:
                 self.order_product = new_producr
         except ZeroQuantityError as e:
+            logging_category.error(f'При попытке добавить продукт возникла ошибка {e}')
             print(e)
         else:
+            logging_category.info("Продукт в заказе заменён")
             print(f'{self.order_product.name} добавлен')
         finally:
             print('обработка добавления товара завершена')
 
-        logging_category.info("Продукт в заказе заменён")
+
 
     def recalculate_the_cost(self):
         """Метод который позволляет принудительно пересчитать общую стоимость заказа"""
