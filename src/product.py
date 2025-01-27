@@ -1,4 +1,5 @@
 import logging
+from abc import ABC, abstractmethod
 from typing import Any
 
 from setting.log_setting import my_log_config
@@ -8,7 +9,38 @@ logging.basicConfig = my_log_config
 logging_product = logging.getLogger("class_Product")
 
 
-class Product:
+class BaseProduct(ABC):
+    """Абстрактный класс - основа для создания продуктов"""
+
+    @abstractmethod
+    def __str__(self) -> None:
+        pass
+
+    @abstractmethod
+    def __add__(self, other: Any) -> None:
+        pass
+
+    @abstractmethod
+    def new_product(self) -> None:
+        pass
+
+    @abstractmethod
+    def price(self) -> None:
+        pass
+
+
+class MixinStartInfo:
+    """Класс миксин, который ывводит на экран информацию об объекте"""
+
+    def __init__(self):
+        super().__init__()
+        print(repr(self))
+
+    def __repr__(self):
+        return (f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})")
+
+
+class Product(BaseProduct, MixinStartInfo):
     """Класс по созданию объектов Продукт"""
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
@@ -19,6 +51,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
         logging_product.info(
             f"Завершили инициацию объекта класса Category с параметрами name - {name}, "
             f"description - {description}, price - {price}, quantity-{quantity}"
@@ -136,7 +169,7 @@ class LawnGrass(Product):
         germination_period: str,
         color: str,
     ):
-        """Инициализация объекта класса Smartphone"""
+        """Инициализация объекта класса LawnGrass"""
 
         logging_product.info("Старт инициализации объекта Трава Газонная")
         super().__init__(name, description, price, quantity)
