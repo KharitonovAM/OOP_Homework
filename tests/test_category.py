@@ -138,4 +138,10 @@ def test_order_recalculate_the_cost(order_object: Order, lawngrass_product: Lawn
 def test_get_avg_price(category_with_products) -> None:
     '''Проверяем что возвращает метод get_avg_price возвращает среднюю цену товаров в категории'''
 
-    category_with_products.get_avg_price == 125000
+    assert category_with_products.get_avg_price() == 125000
+
+
+def test_get_avg_price_without_products(category_without_products) -> None:
+    '''Тест проверяет, что метод get_avg_price возвращает 0, если в список товаров пустой'''
+
+    assert category_without_products.get_avg_price() == 0
