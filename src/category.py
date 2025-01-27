@@ -45,7 +45,18 @@ class Order(abstract_structure):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
 
         logging_category.info("Пытаемся заменить продукт в заказе")
-        self.order_product = new_producr
+        try:
+            if new_producr.quantity == 0:
+                raise ZeroQuantityError
+            else:
+                self.order_product = new_producr
+        except ZeroQuantityError as e:
+            print(e)
+        else:
+            print(f'{self.order_product.name} добавлен')
+        finally:
+            print('обработка добавления товара завершена')
+
         logging_category.info("Продукт в заказе заменён")
 
     def recalculate_the_cost(self):

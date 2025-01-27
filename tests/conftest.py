@@ -125,3 +125,11 @@ def category_without_products() -> Category:
         "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
         [],
     )
+
+
+@pytest.fixture
+def product_with_zero_quantity() -> Product:
+    test_product = Product('test_name','test_dexcription', 10000.15,10)
+    test_product.quantity = 0
+    return test_product
+

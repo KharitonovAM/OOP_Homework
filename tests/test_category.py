@@ -149,6 +149,23 @@ def test_get_avg_price_without_products(category_without_products) -> None:
 
 
 def test_to_order_with_zero_quantity(smartfon_product):
+    '''Тест проверяет что при попытке создания заказа с 0 количеством будет возбуждаться исключение'''
+
     with pytest.raises(ZeroQuantityError):
         Order(0, smartfon_product)
 
+
+def test_add_product_to_order_zero_quantity(order_object, product_with_zero_quantity, capsys):
+    """Тест проверяет что добавлении в заказ продукта с 0 количеством будет отрабатывать исключение"""
+
+    order_object.add_product(product_with_zero_quantity)
+    test_print = capsys.readouterr()
+    assert test_print.out == 'Добавлен продукт с количеством 0\nобработка добавления товара завершена\n'
+
+
+def test_add_product_to_order_zero_quantity(order_object, smartfon_product, capsys):
+    """Тест проверяет что добавлении в заказ продукта с 0 количеством будет отрабатывать исключение"""
+
+    order_object.add_product(smartfon_product)
+    test_print = capsys.readouterr()
+    assert test_print.out == 'Iphone 15 добавлен\nобработка добавления товара завершена\n'
