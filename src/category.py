@@ -4,6 +4,7 @@ from typing import Any
 
 from setting.log_setting import my_log_config
 from src.product import Product
+from src.raises import ZeroQuantityError
 
 logging.basicConfig = my_log_config
 # определяем именные логеры
@@ -29,6 +30,8 @@ class Order(abstract_structure):
 
         logging_category.info("Старт инициализации объекта категории Order")
         self.quantity = quantity
+        if self.quantity == 0:
+            raise ZeroQuantityError
         self.order_product = order_product
         self.total_account = quantity * order_product.price
         logging_category.info("Завершена инициализации объекта категории Order")
@@ -42,8 +45,19 @@ class Order(abstract_structure):
         """Добавляет новый продукт в заказ, заменяя текущий на новый"""
 
         logging_category.info("Пытаемся заменить продукт в заказе")
-        self.order_product = new_producr
-        logging_category.info("Продукт в заказе заменён")
+        try:
+            if new_producr.quantity == 0:
+                raise ZeroQuantityError
+            else:
+                self.order_product = new_producr
+        except ZeroQuantityError as e:
+            logging_category.error(f"При попытке добавить продукт возникла ошибка {e}")
+            print(e)
+        else:
+            logging_category.info("Продукт в заказе заменён")
+            print(f"{self.order_product.name} добавлен")
+        finally:
+            print("обработка добавления товара завершена")
 
     def recalculate_the_cost(self):
         """Метод который позволляет принудительно пересчитать общую стоимость заказа"""
@@ -85,13 +99,26 @@ class Category(abstract_structure):
     def add_product(self, new_product: Any) -> None:
         """Добавляет новый объект класса Product в список продуктов"""
         logging_category.info("Начиинаем добавлять в список продуктов")
-        if issubclass(type(new_product), Product):
-            Category.product_count += 1
-            self.__products.append(new_product)
-            logging_category.info(f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}")
+        try:
+            if new_product.quantity == 0:
+                raise ZeroQuantityError
+            if issubclass(type(new_product), Product):
+                Category.product_count += 1
+                self.__products.append(new_product)
+                logging_category.info(
+                    f"Продукт с наименованием {new_product.name} успешно обавлен в список к {self.name}"
+                )
+            else:
+                logging_category.error("Попытка добавить продукт с наименованием завершилась ошибкой")
+                raise TypeError
+        except ZeroQuantityError as e:
+            logging_category.error(f"При попытке добавить продукт возникла ошибка {e}")
+            print(e)
         else:
-            logging_category.error("Попытка добавить продукт с наименованием завершилась ошибкой")
-            raise TypeError
+            logging_category.info("В категорию добавлен еще один продукт")
+            print(f"{new_product.name} добавлен")
+        finally:
+            print("обработка добавления товара завершена")
 
     @property
     def products(self) -> None:
@@ -110,3 +137,12 @@ class Category(abstract_structure):
     def product_list(self) -> list[Product]:
         """Функция которая позволяет получиь список продуктов"""
         return self.__products
+
+    def get_avg_price(self) -> float:
+        """Метод который возвращает зачение средний цены для всех товаров в категории"""
+
+        try:
+            avg_price = sum([x.price for x in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            avg_price = 0.0
+        return avg_price

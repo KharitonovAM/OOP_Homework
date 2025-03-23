@@ -116,3 +116,19 @@ def lawngrass_product() -> LawnGrass:
 @pytest.fixture
 def order_object() -> Order:
     return Order(2, Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space"))
+
+
+@pytest.fixture
+def category_without_products() -> Category:
+    return Category(
+        "Смартфоны",
+        "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
+        [],
+    )
+
+
+@pytest.fixture
+def product_with_zero_quantity() -> Product:
+    test_product = Product("test_name", "test_dexcription", 10000.15, 10)
+    test_product.quantity = 0
+    return test_product
